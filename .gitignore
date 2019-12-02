@@ -1,7 +1,6 @@
 # vim file
 *~
+*.swap
 
 # _book directory
 _book/
-
-
