@@ -1,0 +1,57 @@
+{
+    "output": null,
+
+    "generator": "site",
+
+    "title": "CPP Cafe",
+    "author": "Shincey Tao <shinceytao@gmail.com>",
+    "description": null,
+
+    "extension": null,
+
+    "plugins": [],
+
+    "pluginsConfig": {
+        "fontSettings": {
+            "theme": "night",
+            "family": "sans",
+            "size": 2
+        }
+    },
+
+    "variables": {},
+
+    "links": {
+        "sidebar": {
+            "Shincey's Github": "https://github.com/Shincey"
+        },
+
+        "sharing": {
+            "google": null,
+            "facebook": null,
+            "twitter": null,
+            "weibo": "https://www.bing.com",
+            "all": null
+        }
+    },
+
+
+    "pdf": {
+        "pageNumbers": false,
+
+        "fontSize": 12,
+
+        "paperSize": "a4",
+
+        "margin": {
+            "right": 62,
+            "left": 62,
+            "top": 36,
+            "bottom": 36
+        },
+
+        "headerTemplate": null,
+
+        "footerTemplate": null
+    }
+}
