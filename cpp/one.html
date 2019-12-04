@@ -363,11 +363,42 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7B2C;&#x4E00;&#x8282;">&#x7B2C;&#x4E00;&#x8282;</h1>
-<ul>
-<li>quesiton 1: print hello world?</li>
-</ul>
-<pre><code class="lang-c++"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;hello world&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<ol>
+<li><strong>C++&#x5B9E;&#x73B0;split&#x51FD;&#x6570;</strong><pre><code class="lang-c++"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; split_v1(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> &amp; str) {
+  <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">istringstream</span> <span class="hljs-title">iss</span><span class="hljs-params">(str)</span></span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(<span class="hljs-built_in">std</span>::istream_iterator&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;{iss}, <span class="hljs-built_in">std</span>::istream_iterator&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;());
+}
+<span class="hljs-comment">/////////////////////////////////////////////////////////////////////////////</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">char</span> delimiter&gt;
+<span class="hljs-keyword">class</span>  MyString : <span class="hljs-keyword">public</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> {};
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">char</span> delimiter&gt;
+<span class="hljs-built_in">std</span>::istream&amp; <span class="hljs-keyword">operator</span>&gt;&gt;(<span class="hljs-built_in">std</span>::istream&amp; is, MyString&lt;delimiter&gt;&amp; output) {
+  <span class="hljs-built_in">std</span>::getline(is, output, delimiter);
+  <span class="hljs-keyword">return</span> is;
+}
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">char</span> delimiter&gt;
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; split_v2(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; str) {
+  <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">istringstream</span> <span class="hljs-title">iss</span><span class="hljs-params">(str)</span></span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(<span class="hljs-built_in">std</span>::istream_iterator&lt;MyString&lt;delimiter&gt;&gt;{iss}, <span class="hljs-built_in">std</span>::istream_iterator&lt;MyString&lt;delimiter&gt;&gt;());
+}
+<span class="hljs-comment">/////////////////////////////////////////////////////////////////////////////</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; split_v3(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; s, <span class="hljs-keyword">char</span> delimiter) {
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; tokens;
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> token;
+  <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">istringstream</span> <span class="hljs-title">token_stream</span><span class="hljs-params">(s)</span></span>;
+  <span class="hljs-keyword">while</span> (<span class="hljs-built_in">std</span>::getline(token_stream, token, delimiter)) {
+    tokens.push_back(token);
+  }
+  <span class="hljs-keyword">return</span> tokens;
+}
 </code></pre>
+<ul>
+<li><code>split_v1</code>&#x65B9;&#x6CD5;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x4F7F;&#x7528;&#x4E86;STL&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x7531;&#x4E8E;istringstream&#x7684;&#x7279;&#x6027;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x80FD;&#x6309;&#x7A7A;&#x683C;&#x5207;&#x5272;&#x5B57;&#x7B26;&#x4E32;&#x3002;</li>
+<li><code>split_v2</code>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>template</code>&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x6307;&#x5B9A;&#x5206;&#x9694;&#x7B26;&#x3002;</li>
+<li><code>split_v3</code>&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x51B3;&#x5B9A;&#x5206;&#x9694;&#x7B26;&#x3002;</li>
+</ul>
+</li>
+</ol>
 
                                 
                                 </section>
@@ -411,7 +442,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第一节","level":"1.2.1","depth":2,"next":{"title":"第二节","level":"1.2.2","depth":2,"path":"cpp/two.md","ref":"cpp/two.md","articles":[]},"previous":{"title":"C++","level":"1.2","depth":1,"path":"cpp/README.md","ref":"cpp/README.md","articles":[{"title":"第一节","level":"1.2.1","depth":2,"path":"cpp/one.md","ref":"cpp/one.md","articles":[]},{"title":"第二节","level":"1.2.2","depth":2,"path":"cpp/two.md","ref":"cpp/two.md","articles":[]},{"title":"第三节","level":"1.2.3","depth":2,"path":"cpp/three.md","ref":"cpp/three.md","articles":[]},{"title":"问题","level":"1.2.4","depth":2,"path":"cpp/question.md","ref":"cpp/question.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"theme":"night","family":"sans","size":2},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":"https://www.bing.com","all":null}},"gitbook":"*","description":null,"extension":null},"file":{"path":"cpp/one.md","mtime":"2019-12-02T13:14:29.264Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-03T03:13:45.120Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第一节","level":"1.2.1","depth":2,"next":{"title":"第二节","level":"1.2.2","depth":2,"path":"cpp/two.md","ref":"cpp/two.md","articles":[]},"previous":{"title":"C++","level":"1.2","depth":1,"path":"cpp/README.md","ref":"cpp/README.md","articles":[{"title":"第一节","level":"1.2.1","depth":2,"path":"cpp/one.md","ref":"cpp/one.md","articles":[]},{"title":"第二节","level":"1.2.2","depth":2,"path":"cpp/two.md","ref":"cpp/two.md","articles":[]},{"title":"第三节","level":"1.2.3","depth":2,"path":"cpp/three.md","ref":"cpp/three.md","articles":[]},{"title":"问题","level":"1.2.4","depth":2,"path":"cpp/question.md","ref":"cpp/question.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"theme":"night","family":"sans","size":2},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"},"sharing":{"google":null,"facebook":null,"twitter":null,"weibo":"https://www.bing.com","all":null}},"gitbook":"*","description":null,"extension":null},"file":{"path":"cpp/one.md","mtime":"2019-12-04T14:06:55.380Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-04T14:07:02.852Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -419,10 +450,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
