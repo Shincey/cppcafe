@@ -2,9 +2,8 @@
 
 * [前言](README.md)
 * [C++](cpp/README.md)
-    * [第一节](cpp/one.md)
-    * [第二节](cpp/two.md)
-    * [第三节](cpp/three.md)
+    * [C++实现split函数](cpp/split_of_cpp.md)
+    * [左右值及引用](cpp/rvalue_reference.md)
     * [问题](cpp/question.md)
 * [计算机网络](network/README.md)
     * [第一节](network/one.md)
