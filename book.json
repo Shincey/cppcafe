@@ -9,14 +9,37 @@
 
     "extension": null,
 
-    "plugins": [],
+    "plugins": ["chapter-fold", "pageview-count", "code", "back-to-top-button",
+                "-sharing", "sharing-plus", "hide-element", "insert-logo"],
 
     "pluginsConfig": {
         "fontSettings": {
             "theme": "night",
             "family": "sans",
             "size": 2
+        },
+        "sharing": {
+          "douban": true,
+          "facebook": true,
+          "google": true,
+          "weibo": true,
+          "qq": true,
+          "qzone": true,
+          "twitter": true,
+          "pocket": true,
+          "all" : [
+            "douban", "qq", "qzone", "facebook", "google", "instapaper",
+            "twitter", "weibo", "messenger", "whatsapp"
+          ]
+        },
+        "hide-element": {
+          "elements":[".gitbook-link"]
+        },
+        "insert-logo": {
+          "url": "https://i.loli.net/2019/12/06/4IiyV7hZSXRfTlg.png",
+          "style": "background: none; max-height: 30px; min-height: 30px"
         }
+
     },
 
     "variables": {},
@@ -24,14 +47,6 @@
     "links": {
         "sidebar": {
             "Shincey's Github": "https://github.com/Shincey"
-        },
-
-        "sharing": {
-            "google": null,
-            "facebook": null,
-            "twitter": null,
-            "weibo": "https://www.bing.com",
-            "all": null
         }
     },
 
