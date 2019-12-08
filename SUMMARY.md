@@ -13,5 +13,7 @@
     * [第二节](os/two.md)
 * [数据库](db/README.md)
     * [第一节](db/one.md)
+* [其它](others/README.md)
+    * [Makefile使用(1)-基本规则](others/makefile_1.md)
 * [结束](end/README.md)
 

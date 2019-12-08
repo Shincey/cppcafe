@@ -1,0 +1,600 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Makefile使用(1)-基本规则 · CPP Cafe</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Shincey Tao <shinceytao@gmail.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../end/" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/Shincey" target="_blank" class="custom-link">Shincey's Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../cpp/">
+            
+                <a href="../cpp/">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../cpp/split_of_cpp.html">
+            
+                <a href="../cpp/split_of_cpp.html">
+            
+                    
+                    C++实现split函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../cpp/rvalue_reference.html">
+            
+                <a href="../cpp/rvalue_reference.html">
+            
+                    
+                    左右值及引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../cpp/question.html">
+            
+                <a href="../cpp/question.html">
+            
+                    
+                    问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../network/">
+            
+                <a href="../network/">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../network/one.html">
+            
+                <a href="../network/one.html">
+            
+                    
+                    第一节
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../network/two.html">
+            
+                <a href="../network/two.html">
+            
+                    
+                    第二节
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../os/">
+            
+                <a href="../os/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../os/one.html">
+            
+                <a href="../os/one.html">
+            
+                    
+                    第一节
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../os/two.html">
+            
+                <a href="../os/two.html">
+            
+                    
+                    第二节
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../db/">
+            
+                <a href="../db/">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../db/one.html">
+            
+                <a href="../db/one.html">
+            
+                    
+                    第一节
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    其它
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.6.1" data-path="makefile_1.html">
+            
+                <a href="makefile_1.html">
+            
+                    
+                    Makefile使用(1)-基本规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../end/">
+            
+                <a href="../end/">
+            
+                    
+                    结束
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Makefile使用(1)-基本规则</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="makefile&#x4F7F;&#x7528;1-&#x57FA;&#x672C;&#x89C4;&#x5219;">Makefile&#x4F7F;&#x7528;(1)-&#x57FA;&#x672C;&#x89C4;&#x5219;</h1>
+<pre><code class="lang-makefile">targets : prerequisites
+    command
+    ...
+<span class="hljs-comment"># or</span>
+targets : prerequisites ; command
+    command
+    ...
+</code></pre>
+<ul>
+<li>targets &#x662F;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF0C;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x5F00;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#x3002;&#x4E00;&#x822C;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</li>
+<li>command&#x662F;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x4E0E;<code>targets:prerequisites</code>&#x5728;&#x4E00;&#x884C;&#xFF0C;&#x5FC5;&#x987B;&#x4EE5;<code>tab</code>&#x952E;&#x5F00;&#x5934;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x4E00;&#x884C;&#x53EF;&#x4EE5;&#x7528;&#x5206;&#x53F7;&#x5206;&#x9694;&#x3002;</li>
+<li><code>prerequisites</code>&#x662F;&#x76EE;&#x6807;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x5176;&#x4E2D;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x8981;&#x6BD4;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x65E5;&#x671F;&#x66F4;&#x52A0;&#x65B0;&#x7684;&#x8BDD;&#xFF0C;&#x76EE;&#x6807;&#x5C31;&#x4F1A;&#x88AB;&#x8BA4;&#x4E3A;&#x8FC7;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>\</code>&#x6362;&#x884C;&#x3002;</li>
+</ul>
+<p><strong>&#x901A;&#x914D;&#x7B26;</strong>&#xFF1A;<code>wildcard</code>&#x6269;&#x5C55;&#x901A;&#x914D;&#x7B26;&#xFF0C;<code>notdir</code>&#x53BB;&#x9664;&#x8DEF;&#x5F84;&#xFF0C;<code>patsubst</code>&#x66FF;&#x6362;&#x901A;&#x914D;&#x7B26;&#xFF1A;</p>
+<ul>
+<li><code>~</code>&#xFF1A;<code>~/test</code>&#x8868;&#x793A;&#x5F53;&#x524D;&#x7528;&#x6237;&#x7684;$HOME&#x76EE;&#x5F55;&#x4E0B;&#x7684;test&#x76EE;&#x5F55;&#xFF0C;<code>~user/test</code>&#x8868;&#x793A;&#x7528;&#x6237;user&#x7684;&#x5BBF;&#x4E3B;&#x76EE;&#x5F55;&#x4E0B;&#x7684;test&#x76EE;&#x5F55;&#x3002;windows&#x6CA1;&#x6709;&#x5BBF;&#x4E3B;&#x76EE;&#x5F55;&#xFF0C;<code>~</code>&#x6839;&#x636E;&#x73AF;&#x5883;&#x53D8;&#x91CF;HOME&#x8BBE;&#x5B9A;&#x3002;</li>
+<li><code>*</code>&#xFF1A;&#x5339;&#x914D;&#x4EFB;&#x610F;&#x957F;&#x5EA6;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;<code>*.c</code>&#x8868;&#x793A;&#x6240;&#x6709;&#x540E;&#x7F00;&#x4E3A;c&#x7684;&#x6587;&#x4EF6;&#x3002;</li>
+<li><code>%</code>&#xFF1A;&#x5339;&#x914D;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;0&#x4E2A;&#x82E5;&#x5E72;&#x5B57;&#x7B26;&#xFF0C;&#x548C;<code>*</code>&#x7684;&#x533A;&#x522B;&#x6211;&#x89C9;&#x5F97;&#x5728;&#x4E8E;<code>%.c</code>&#x82E5;&#x5339;&#x914D;&#x5230;<code>filename.c</code>&#x5219;<code>%.c</code>&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x5C31;&#x88AB;&#x66FF;&#x6362;&#x6210;<code>filename.c</code>&#x3002;</li>
+<li><code>?</code>&#xFF1A;&#x4EC5;&#x4EE3;&#x8868;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x3002;</li>
+</ul>
+<pre><code class="lang-makefile"><span class="hljs-comment"># a.&#x5217;&#x51FA;&#x4E00;&#x786E;&#x5B9A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;&#x6240;&#x6709; .c &#x6587;&#x4EF6;</span>
+objects := <span class="hljs-variable">$(wildcard *.c)</span>
+<span class="hljs-comment"># b.&#x5217;&#x51FA;(a)&#x4E2D;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x5BF9;&#x5E94;&#x7684; .o &#x6587;&#x4EF6;</span>
+$(patsubst %.c, %.o, $(wildcard *c))
+<span class="hljs-comment"># c.&#x7531;(a)(b)&#x4E24;&#x6B65;&#x53EF;&#x4EE5;&#x5199;&#x51FA;&#x7F16;&#x8BD1;&#x5E76;&#x94FE;&#x63A5;&#x6240;&#x6709; .c .o &#x6587;&#x4EF6;</span>
+objects := <span class="hljs-variable">$(patsubst %.c, %.o, $(wildcard *.c)</span>)
+foo : $(objects)
+    cc -o foo $(objects)
+</code></pre>
+<p><strong>&#x6587;&#x4EF6;&#x641C;&#x5BFB;</strong>&#xFF1A;makefile&#x4E2D;&#x7279;&#x6B8A;&#x53D8;&#x91CF;<code>VPATH</code>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#xFF0C;make&#x53EA;&#x4F1A;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E2D;&#x641C;&#x5BFB;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF1B;&#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86;&#xFF0C;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x627E;&#x4E0D;&#x5230;&#x56DE;&#x5230;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x641C;&#x5BFB;&#x3002;&#x6307;&#x5B9A;&#x7684;&#x987A;&#x5E8F;&#x5C31;&#x662F;&#x641C;&#x7D22;&#x987A;&#x5E8F;&#xFF0C;&#x4E0D;&#x8FC7;&#xFF0C;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x6C38;&#x8FDC;&#x662F;&#x6700;&#x9AD8;&#x4F18;&#x5148;&#x641C;&#x7D22;&#x7684;&#x5730;&#x65B9;&#x3002;</p>
+<pre><code class="lang-makefile"><span class="hljs-comment"># &#x5230; src &#x548C; ../headers &#x4E0B;&#x641C;&#x7D22;&#xFF0C; &#x76EE;&#x5F55;&#x7531; &#xFF1A; &#x5206;&#x9694;</span>
+VPATH = src : ../headers
+</code></pre>
+<p>&#x53E6;&#x4E00;&#x4E2A;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;<code>vpath</code>&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x641C;&#x7D22;&#x76EE;&#x5F55;&#x4E2D;&#x3002;</p>
+<ul>
+<li><code>vpath &lt;pattern&gt; &lt;directories&gt;</code>&#xFF1A;&#x4E3A;&#x7B26;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x6307;&#x5B9A;&#x641C;&#x7D22;&#x76EE;&#x5F55;&#x3002;</li>
+<li><code>vpath &lt;pattern&gt;</code>&#xFF1A;&#x6E05;&#x9664;&#x7B26;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x641C;&#x7D22;&#x76EE;&#x5F55;&#x3002;</li>
+<li><code>vpath</code>&#xFF1A;&#x6E05;&#x9664;&#x6240;&#x6709;&#x88AB;&#x8BBE;&#x7F6E;&#x7684;&#x6587;&#x4EF6;&#x641C;&#x7D22;&#x76EE;&#x5F55;&#x3002;</li>
+</ul>
+<p><code>vpath</code>&#x4F7F;&#x7528;&#x4E2D;&#x7684;<code>&lt;pattern&gt;</code>&#x9700;&#x8981;&#x5305;&#x542B;<code>%</code>&#x5B57;&#x7B26;</p>
+<pre><code class="lang-makefile"><span class="hljs-comment"># &#x5728; ../headers &#x4E0B;&#x641C;&#x7D22;&#x6240;&#x6709; .h &#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x7684;&#x8BDD;</span>
+vpath %.h ../headers
+</code></pre>
+<p><strong>&#x4F2A;&#x76EE;&#x6807;</strong>&#xFF1A;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;make&#x65E0;&#x6CD5;&#x751F;&#x6210;&#x5B83;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x548C;&#x51B3;&#x5B9A;&#x5B83;&#x662F;&#x5426;&#x8981;&#x6267;&#x884C;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x7279;&#x6B8A;&#x6807;&#x8BB0;<code>.PHONY</code>&#x6765;&#x663E;&#x793A;&#x6307;&#x660E;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x662F;&#x4F2A;&#x76EE;&#x6807;&#xFF0C;&#x907F;&#x514D;&#x548C;&#x6587;&#x4EF6;&#x91CD;&#x540D;&#x3002;&#x5E38;&#x7528;&#x6BD4;&#x5982;&#x5199;&#x4E00;&#x4E2A;&#x4F2A;&#x76EE;&#x6807;<code>clean</code>&#x6765;&#x6E05;&#x9664;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x4E0D;&#x8FC7;&#x4E5F;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x4F2A;&#x76EE;&#x6807;&#x6765;&#x4E00;&#x6B21;&#x751F;&#x6210;&#x591A;&#x4E2A;&#x76EE;&#x6807;&#x3002;</p>
+<pre><code class="lang-makefile">all : prog1 prog2 prog3
+.PHONY : all
+prog1 : prog1.o utils.o
+    cc -o prog1 prog1.o utils.o
+prog2 : prog2.o
+    cc -o prog2 prog2.o
+prog3 : prog3.o sort.o utils.o
+    cc -o prog3 prog3.o sort.o utils.o
+</code></pre>
+<p>makefile&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x522B;&#x8BA4;&#x4E3A;&#x9ED8;&#x8BA4;&#x76EE;&#x6807;&#xFF0C;&#x9ED8;&#x8BA4;&#x76EE;&#x6807;&#x7684;&#x7279;&#x6027;&#x5C31;&#x662F;&#x603B;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x3002;&#x7531;&#x4E8E;<code>all</code>&#x662F;&#x4E00;&#x4E2A;&#x4F2A;&#x76EE;&#x6807;&#xFF0C;&#x4E0D;&#x4F1A;&#x751F;&#x6210;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x4ED6;&#x4E09;&#x4E2A;&#x76EE;&#x6807;&#x4F1A;&#x88AB;&#x751F;&#x6210;&#x3002;</p>
+<p><strong>&#x591A;&#x76EE;&#x6807;</strong>&#xFF1A;&#x5229;&#x7528;&#x4E00;&#x4E9B;&#x81EA;&#x52A8;&#x5316;&#x53D8;&#x91CF;&#x7684;&#x77E5;&#x8BC6;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x751F;&#x6210;&#x591A;&#x4E2A;&#x76EE;&#x6807;&#x3002;</p>
+<pre><code class="lang-makefile">aoutput boutput : text.g
+    generate text.g -$(subst output,,$@) &gt; $@
+</code></pre>
+<p><code>-$(subst output,,$@)</code>&#x8868;&#x793A;&#x6267;&#x884C;&#x4E00;&#x4E2A;makefile&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x540D;&#x4E3A;<code>subst</code>&#xFF0C;&#x540E;&#x9762;&#x4E3A;&#x53C2;&#x6570;&#x3002;<code>$@</code>&#x8868;&#x793A;&#x76EE;&#x6807;&#x7684;&#x96C6;&#x5408;&#xFF0C;<code>$@</code>&#x4F9D;&#x6B21;&#x53D6;&#x51FA;&#x5E76;&#x6267;&#x884C;&#x76EE;&#x6807;&#x3002;</p>
+<p><strong>&#x9759;&#x6001;&#x6A21;&#x5F0F;</strong>&#xFF1A;&#x53EF;&#x4EE5;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#x5730;&#x5B9A;&#x4E49;&#x591A;&#x76EE;&#x6807;&#x89C4;&#x5219;</p>
+<pre><code class="lang-makefile">&lt;targets ...&gt; : &lt;target-pattern&gt; : &lt;prereq-pattern ...&gt;
+    &lt;commands&gt;
+    ...
+</code></pre>
+<ul>
+<li><code>targets</code>&#x5B9A;&#x4E49;&#x4E00;&#x7CFB;&#x5217;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x901A;&#x914D;&#x7B26;&#x3002;</li>
+<li><code>target-pattern</code>&#x6307;&#x660E;&#x4E86;<code>targets</code>&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x76EE;&#x6807;&#x96C6;&#x6A21;&#x5F0F;&#x3002;</li>
+<li><code>prereq-patterns</code>&#x662F;&#x76EE;&#x6807;&#x7684;&#x4F9D;&#x8D56;&#x6A21;&#x5F0F;&#xFF0C;&#x5B83;&#x5BF9;<code>target-pattern</code>&#x5F62;&#x6210;&#x7684;&#x6A21;&#x5F0F;&#x518D;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x4F9D;&#x8D56;&#x76EE;&#x6807;&#x7684;&#x5B9A;&#x4E49;&#x3002;&#x4F8B;&#x5982;&#xFF1A;<code>target-pattern</code>&#x4E3A;<code>%.o</code>&#xFF0C;&#x610F;&#x601D;&#x662F;&#x76EE;&#x6807;&#x96C6;&#x90FD;&#x662F;&#x4EE5;<code>.o</code>&#x7ED3;&#x5C3E;&#x3002;&#x800C;&#x5982;&#x679C;<code>&lt;prereq-pattern&gt;</code>&#x5B9A;&#x4E49;&#x6210;<code>%.c</code>&#xFF0C;&#x610F;&#x601D;&#x662F;&#x5BF9;<code>target-pattern</code>&#x6240;&#x5F62;&#x6210;&#x7684;&#x76EE;&#x6807;&#x96C6;&#x8FDB;&#x884C;&#x4E8C;&#x6B21;&#x5B9A;&#x4E49;&#xFF0C;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#x662F;&#x53D6;<code>target-pattern</code>&#x6A21;&#x5F0F;&#x4E2D;&#x7684;<code>%</code>(&#x4E5F;&#x5C31;&#x662F;&#x53BB;&#x6389;<code>.o</code>)&#xFF0C;&#x5E76;&#x4E3A;&#x5176;&#x52A0;&#x4E0A;<code>.c</code>&#x7ED3;&#x5C3E;&#xFF0C;&#x5F62;&#x6210;&#x7684;&#x65B0;&#x96C6;&#x5408;&#x3002;</li>
+</ul>
+<pre><code class="lang-makefile"><span class="hljs-comment"># example 1</span>
+bjects = foo.o bar.o
+all : $(objects)
+$(objects) : %.o: %.c
+    $(CC) -c $(CFLAGS) $&lt; $@
+</code></pre>
+<p><strong>&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4F9D;&#x8D56;</strong>&#xFF1A;C/C++&#x7F16;&#x8BD1;&#x5668;&#x90FD;&#x652F;&#x6301;<code>-M</code>&#xFF0C;&#x5373;&#x81EA;&#x52A8;&#x627E;&#x5BFB;&#x6E90;&#x6587;&#x4EF6;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x751F;&#x6210;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;</p>
+<pre><code class="lang-makefile"><span class="hljs-comment"># main.o : main.c def.h</span>
+cc -M main.c
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7684;&#x662F;GNU&#x7684;C/C++&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x5F97;&#x7528;<code>-MM</code>&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x7136;<code>-M</code>&#x4F1A;&#x628A;&#x4E00;&#x4E9B;&#x6807;&#x51C6;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x4E5F;&#x5305;&#x542B;&#x8FDB;&#x6765;&#x3002;&#x4F46;&#x662F;&#x8981;&#x60F3;&#x5728;makefile&#x91CC;&#x5B8C;&#x6210;&#x81EA;&#x52A8;&#x4F9D;&#x8D56;&#x751F;&#x6210;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5176;&#x5B83;&#x624B;&#x6BB5;&#x6765;&#x5B9E;&#x73B0;&#x3002;GNU&#x7EC4;&#x7EC7;&#x5EFA;&#x8BAE;&#x628A;&#x7F16;&#x8BD1;&#x5668;&#x4E3A;&#x6BCF;&#x4E2A;&#x6E90;&#x6587;&#x4EF6;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;<code>name.c</code>&#x6587;&#x4EF6;&#x751F;&#x6210;&#x4E00;&#x4E2A;<code>name.d</code>&#x7684;makefile&#x6587;&#x4EF6;&#xFF0C;<code>.d</code>&#x5C31;&#x5B58;&#x653E;&#x5BF9;&#x5E94;<code>.c</code>&#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x8BA9;make&#x81EA;&#x52A8;&#x66F4;&#x65B0;<code>.d</code>&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x628A;&#x5176;&#x5305;&#x542B;&#x5728;&#x4E3B;makefile&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-makefile">%.d: %.c
+    @set -e; rm -f $@; \
+     $(CC) -M $(CPPFLAGS) $&lt; &gt; $@.$$$$; \
+     sed &apos;s,\($*\)\.o[ :]*,\1.o $@ :, g&apos; &lt; $@.$$$$ &gt; $@; \
+     rm -f $@.$$$$
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x610F;&#x601D;&#x5C31;&#x662F;&#x6240;&#x6709;&#x7684;<code>.d</code>&#x6587;&#x4EF6;&#x4F9D;&#x8D56;&#x4E8E;<code>.c</code>&#x6587;&#x4EF6;&#x3002; <code>rm -f $@</code>&#x7684;&#x610F;&#x601D;&#x662F;&#x5220;&#x9664;&#x6240;&#x6709;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;<code>.d</code>&#x6587;&#x4EF6;&#xFF1B;&#x7B2C;&#x4E8C;&#x884C;&#x7684;&#x610F;&#x601D;&#x662F;&#x4E3A;&#x6BCF;&#x4E2A;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;<code>$&lt;</code>&#xFF0C;&#x4E5F;&#x5C31;&#x662F;<code>.c</code>&#x6587;&#x4EF6;&#x751F;&#x6210;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#xFF0C;<code>$@</code>&#x8868;&#x793A;&#x6A21;&#x5F0F;<code>%.d</code>&#x6587;&#x4EF6;&#xFF0C;<code>$*</code>&#x8868;&#x793A;<code>%</code>&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E00;&#x4E2A;C&#x6587;&#x4EF6;&#x662F;<code>name.c</code>&#xFF0C;&#x90A3;&#x4E48;<code>%</code>&#x5C31;&#x662F;<code>name</code>&#xFF0C; <code>$$$$</code>&#x662F;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x7F16;&#x53F7;&#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x53EF;&#x80FD;&#x662F;<code>name.d.12345</code>&#xFF1B;&#x7B2C;&#x4E09;&#x884C;&#x4F7F;&#x7528;<code>sed</code>&#x547D;&#x4EE4;&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x66FF;&#x6362;&#xFF0C;&#x4E00;&#x822C;&#x5F62;&#x5F0F;&#x662F;<code>sed &apos;s/pattern/new/g&apos;</code>&#xFF0C;&#x8FD9;&#x91CC;&#x7528;&#x4E86;&#x9017;&#x53F7;&#x505A;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x7684;&#x5206;&#x9694;&#xFF0C;&#x5176;&#x4E2D;g&#x8868;&#x793A;&#x6240;&#x6709;&#x5339;&#x914D;&#x90FD;&#x66FF;&#x6362;&#xFF0C;&#x6CA1;&#x6709;g&#x53EA;&#x66FF;&#x6362;&#x7B2C;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x7ED3;&#x679C;&#xFF0C;/&#x5206;&#x9694;&#x7B26;&#x4E5F;&#x53EF;&#x4EE5;&#x6362;&#x6210;&#x5176;&#x5B83;&#x7B26;&#x53F7;&#xFF0C;&#x5982;<code>sed &apos;s:/usr/local:/usr:g&apos; mytest.txt</code>&#x7528;<code>:</code>&#x66FF;&#x6362;<code>/</code>&#xFF1B;&#x7B2C;&#x56DB;&#x884C;&#x5C31;&#x662F;&#x5220;&#x9664;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x4EE5;&#x4E0A;&#x89C4;&#x5219;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x5C31;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x751F;&#x6210;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x4E2D;&#x52A0;&#x5165;<code>.d</code>&#x6587;&#x4EF6;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x5373;&#x628A;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;<code>main.o : main.c defs.h</code>&#x8F6C;&#x6362;&#x6210;<code>main.o mian.d : main.c defs.h</code>&#x3002;&#x8FD9;&#x6837;&#xFF0C;<code>.d</code>&#x6587;&#x4EF6;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#xFF0C;&#x5E76;&#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E86;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x5728;<code>.d</code>&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x5165;&#x7684;&#x4E0D;&#x53EA;&#x662F;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x5305;&#x62EC;&#x751F;&#x6210;&#x7684;&#x547D;&#x4EE4;&#x4E5F;&#x53EF;&#x4EE5;&#x4E00;&#x5E76;&#x52A0;&#x5165;&#xFF0C;&#x8BA9;&#x6BCF;&#x4E2A;<code>.d</code>&#x6587;&#x4EF6;&#x90FD;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x89C4;&#x5219;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x628A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x89C4;&#x5219;&#x653E;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x4E3B;makefile&#x4E2D;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;makefile&#x7684;<code>include</code>&#x547D;&#x4EE4;&#x5F15;&#x5165;&#x522B;&#x7684;makefile&#x6587;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-makefile">sources = foo.c bar.c
+include $(sources:.c=.d)
+</code></pre>
+<p><code>$(sources:.c=.d)</code>&#x7684;&#x610F;&#x601D;&#x662F;&#x628A;<code>$(sources)</code>&#x4E2D;&#x6240;&#x6709;<code>.c</code>&#x66FF;&#x6362;&#x4E3A;<code>.d</code>&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x6B21;&#x5E8F;&#xFF0C;&#x6700;&#x5148;&#x8F7D;&#x5165;&#x7684;<code>.d</code>&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x76EE;&#x6807;&#x4F1A;&#x6210;&#x4E3A;&#x9ED8;&#x8BA4;&#x76EE;&#x6807;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 其它">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../end/" class="navigation navigation-next " aria-label="Next page: 结束">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Makefile使用(1)-基本规则","level":"1.6.1","depth":2,"next":{"title":"结束","level":"1.7","depth":1,"path":"end/README.md","ref":"end/README.md","articles":[]},"previous":{"title":"其它","level":"1.6","depth":1,"path":"others/README.md","ref":"others/README.md","articles":[{"title":"Makefile使用(1)-基本规则","level":"1.6.1","depth":2,"path":"others/makefile_1.md","ref":"others/makefile_1.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","pageview-count","code","back-to-top-button","-sharing","sharing-plus","hide-element","insert-logo"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":true,"all":["douban","qq","qzone","facebook","google","instapaper","twitter","weibo","messenger","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"https://i.loli.net/2019/12/06/4IiyV7hZSXRfTlg.png"}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"}},"gitbook":"*","description":null,"extension":null},"file":{"path":"others/makefile_1.md","mtime":"2019-12-08T12:31:53.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-08T12:37:49.212Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
