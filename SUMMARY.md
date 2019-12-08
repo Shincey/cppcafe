@@ -15,5 +15,11 @@
     * [第一节](db/one.md)
 * [其它](others/README.md)
     * [Makefile使用(1)-基本规则](others/makefile_1.md)
+    * [Makefile使用(2)-使用命令](others/makefile_2.md)
+    * [Makefile使用(3)-使用变量](others/makefile_3.md)
+    * [Makefile使用(4)-使用函数](others/makefile_4.md)
+    * [Makefile使用(5)-make运行](others/makefile_5.md)
+    * [Makefile使用(6)-隐含规则](others/makefile_6.md)
+    * [Makefile使用(7)-更新函数库文件](others/makefile_7.md)
 * [结束](end/README.md)
 
