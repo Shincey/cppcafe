@@ -2,6 +2,7 @@
 
 * [前言](README.md)
 * [C++](cpp/README.md)
+    * [C++实现函数多返回值](cpp/multiple_returns.md)
     * [C++实现split函数](cpp/split_of_cpp.md)
     * [左右值及引用](cpp/rvalue_reference.md)
     * [问题](cpp/question.md)

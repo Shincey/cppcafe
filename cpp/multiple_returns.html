@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第一节 · CPP Cafe</title>
+        <title>C++实现函数多返回值 · CPP Cafe</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,7 +77,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="two.html" />
+    <link rel="next" href="split_of_cpp.html" />
     
     
     <link rel="prev" href="./" />
@@ -131,9 +131,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../cpp/">
+        <li class="chapter " data-level="1.2" data-path="./">
             
-                <a href="../cpp/">
+                <a href="./">
             
                     
                     C++
@@ -145,9 +145,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../cpp/multiple_returns.html">
+        <li class="chapter active" data-level="1.2.1" data-path="multiple_returns.html">
             
-                <a href="../cpp/multiple_returns.html">
+                <a href="multiple_returns.html">
             
                     
                     C++实现函数多返回值
@@ -158,9 +158,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../cpp/split_of_cpp.html">
+        <li class="chapter " data-level="1.2.2" data-path="split_of_cpp.html">
             
-                <a href="../cpp/split_of_cpp.html">
+                <a href="split_of_cpp.html">
             
                     
                     C++实现split函数
@@ -171,9 +171,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../cpp/rvalue_reference.html">
+        <li class="chapter " data-level="1.2.3" data-path="rvalue_reference.html">
             
-                <a href="../cpp/rvalue_reference.html">
+                <a href="rvalue_reference.html">
             
                     
                     左右值及引用
@@ -184,9 +184,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../cpp/question.html">
+        <li class="chapter " data-level="1.2.4" data-path="question.html">
             
-                <a href="../cpp/question.html">
+                <a href="question.html">
             
                     
                     问题
@@ -202,9 +202,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="../network/">
             
-                <a href="./">
+                <a href="../network/">
             
                     
                     计算机网络
@@ -216,9 +216,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="one.html">
+        <li class="chapter " data-level="1.3.1" data-path="../network/one.html">
             
-                <a href="one.html">
+                <a href="../network/one.html">
             
                     
                     第一节
@@ -229,9 +229,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="two.html">
+        <li class="chapter " data-level="1.3.2" data-path="../network/two.html">
             
-                <a href="two.html">
+                <a href="../network/two.html">
             
                     
                     第二节
@@ -477,7 +477,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >第一节</a>
+        <a href=".." >C++实现函数多返回值</a>
     </h1>
 </div>
 
@@ -492,7 +492,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7B2C;&#x4E00;&#x8282;">&#x7B2C;&#x4E00;&#x8282;</h1>
+                                <h1 id="c&#x5B9E;&#x73B0;&#x51FD;&#x6570;&#x591A;&#x8FD4;&#x56DE;&#x503C;">C++&#x5B9E;&#x73B0;&#x51FD;&#x6570;&#x591A;&#x8FD4;&#x56DE;&#x503C;</h1>
+<p><strong>1. &#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;</strong></p>
+<p>C++&#x5E76;&#x4E0D;&#x80FD;&#x50CF;python&#x90A3;&#x6837;&#x4E00;&#x6B21;&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x5374;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x5176;&#x5B83;&#x6280;&#x5DE7;&#x6765;&#x8FBE;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#x3002;&#x6BD4;&#x5982;&#x6700;&#x5BB9;&#x6613;&#x60F3;&#x5230;&#x7684;&#x662F;&#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x5728;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x503C;&#xFF0C;&#x6700;&#x540E;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x505A;&#x5C31;&#x4E0D;&#x5F97;&#x4E0D;&#x5728;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x6587;&#x4EF6;&#x5F00;&#x5934;&#x4E5F;&#x5305;&#x542B;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">struct</span> Student {
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> name;
+    <span class="hljs-keyword">int</span> id;
+};
+<span class="hljs-function">Student <span class="hljs-title">GetInfo</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> { <span class="hljs-string">&quot;shy&quot;</span>, <span class="hljs-number">22</span> };
+}
+</code></pre>
+<hr>
+<p><strong>2. &#x4F7F;&#x7528;&#x6307;&#x9488;&#x6216;&#x5F15;&#x7528;&#x4F20;&#x53C2;</strong></p>
+<p>&#x5229;&#x7528;&#x6307;&#x9488;&#x6216;&#x8005;&#x5F15;&#x7528;&#x4F20;&#x53C2;&#x5230;&#x51FD;&#x6570;&#x5185;&#xFF0C;&#x5229;&#x7528;&#x6307;&#x9488;&#x548C;&#x5F15;&#x7528;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x5185;&#x6539;&#x53D8;&#x5916;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x4ECE;&#x800C;&#x5F97;&#x5230;&#x591A;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">GetInfo</span><span class="hljs-params">(<span class="hljs-built_in">string</span> &amp; name, <span class="hljs-keyword">int</span> * id)</span> </span>{
+    name = <span class="hljs-string">&quot;shy&quot;</span>;
+    *id = <span class="hljs-number">22</span>;
+}
+</code></pre>
+<hr>
+<p><strong>3. &#x5229;&#x7528;STL&#x5E93;&#x4E2D;&#x7684;<code>std::tuple</code>&#x6216;<code>stl::pair</code>&#x7B49;</strong></p>
+<p>&#x5C31;&#x4E0D;&#x63A2;&#x8BA8;&#x8FD4;&#x56DE;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD4;&#x56DE;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x6570;&#x7EC4;&#x6216;&#x8005;<code>vector</code>&#x7B49;&#x7C7B;&#x578B;&#x6765;&#x8FBE;&#x5230;&#x6548;&#x679C;&#x3002;&#x5982;&#x679C;&#x8981;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>std::tuple</code>&#x5904;&#x7406;&#x591A;&#x4E2A;&#x8FD4;&#x56DE;&#x503C;&#xFF1A;</p>
+<pre><code class="lang-c++"><span class="hljs-built_in">std</span>::tuple&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>, <span class="hljs-keyword">int</span>&gt; GetInfo() {
+    <span class="hljs-keyword">return</span> { <span class="hljs-string">&quot;shy&quot;</span>, <span class="hljs-number">22</span> };
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x63A5;&#x6536;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF1A;</p>
+<pre><code class="lang-c++"><span class="hljs-comment">// 1.</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> name;
+<span class="hljs-keyword">int</span> id;
+<span class="hljs-built_in">std</span>::tie(name, id) = GetInfo();
+
+<span class="hljs-comment">// 2.</span>
+<span class="hljs-keyword">auto</span> [name, id] = GetInfo();
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x63A5;&#x6536;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;&#x5F53;&#x4E2D;&#xFF0C;&#x7B2C;2&#x4E2A;&#x65B9;&#x6CD5;&#x6700;&#x4FBF;&#x6377;&#xFF0C;&#x4F46;&#x7B2C;2&#x4E2A;&#x65B9;&#x6CD5;&#x662F;C++17&#x7684;&#x6807;&#x51C6;&#xFF0C;&#x6240;&#x4EE5;&#x60F3;&#x8981;&#x7F16;&#x8BD1;&#x901A;&#x8FC7;&#x5F97;&#x786E;&#x4FDD;&#x4F60;&#x4F7F;&#x7528;&#x7684;&#x662F;C++17&#x3002;</p>
 
                                 
                                 </section>
@@ -520,12 +555,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 计算机网络">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: C++">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="two.html" class="navigation navigation-next " aria-label="Next page: 第二节">
+                <a href="split_of_cpp.html" class="navigation navigation-next " aria-label="Next page: C++实现split函数">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -536,7 +571,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第一节","level":"1.3.1","depth":2,"next":{"title":"第二节","level":"1.3.2","depth":2,"path":"network/two.md","ref":"network/two.md","articles":[]},"previous":{"title":"计算机网络","level":"1.3","depth":1,"path":"network/README.md","ref":"network/README.md","articles":[{"title":"第一节","level":"1.3.1","depth":2,"path":"network/one.md","ref":"network/one.md","articles":[]},{"title":"第二节","level":"1.3.2","depth":2,"path":"network/two.md","ref":"network/two.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","pageview-count","code","back-to-top-button","-sharing","sharing-plus","hide-element","insert-logo"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":true,"all":["douban","qq","qzone","facebook","google","instapaper","twitter","weibo","messenger","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"https://i.loli.net/2019/12/06/4IiyV7hZSXRfTlg.png"}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"}},"gitbook":"*","description":null,"extension":null},"file":{"path":"network/one.md","mtime":"2019-12-11T14:25:38.261Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-15T11:22:15.671Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"C++实现函数多返回值","level":"1.2.1","depth":2,"next":{"title":"C++实现split函数","level":"1.2.2","depth":2,"path":"cpp/split_of_cpp.md","ref":"cpp/split_of_cpp.md","articles":[]},"previous":{"title":"C++","level":"1.2","depth":1,"path":"cpp/README.md","ref":"cpp/README.md","articles":[{"title":"C++实现函数多返回值","level":"1.2.1","depth":2,"path":"cpp/multiple_returns.md","ref":"cpp/multiple_returns.md","articles":[]},{"title":"C++实现split函数","level":"1.2.2","depth":2,"path":"cpp/split_of_cpp.md","ref":"cpp/split_of_cpp.md","articles":[]},{"title":"左右值及引用","level":"1.2.3","depth":2,"path":"cpp/rvalue_reference.md","ref":"cpp/rvalue_reference.md","articles":[]},{"title":"问题","level":"1.2.4","depth":2,"path":"cpp/question.md","ref":"cpp/question.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","pageview-count","code","back-to-top-button","-sharing","sharing-plus","hide-element","insert-logo"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":true,"all":["douban","qq","qzone","facebook","google","instapaper","twitter","weibo","messenger","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"https://i.loli.net/2019/12/06/4IiyV7hZSXRfTlg.png"}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"}},"gitbook":"*","description":null,"extension":null},"file":{"path":"cpp/multiple_returns.md","mtime":"2019-12-15T11:22:03.198Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-15T11:22:15.671Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
