@@ -5,6 +5,7 @@
     * [C++实现函数多返回值](cpp/multiple_returns.md)
     * [C++实现split函数](cpp/split_of_cpp.md)
     * [左右值及引用](cpp/rvalue_reference.md)
+    * [整数运算溢出](cpp/int_overflow.md)
     * [问题](cpp/question.md)
 * [计算机网络](network/README.md)
     * [第一节](network/one.md)
