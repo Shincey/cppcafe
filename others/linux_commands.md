@@ -54,6 +54,10 @@
   * 示例：`ln [src] [dest]`
   * `-s`：创建软连接
 
+* `lsof`：展示系统上所有被打开的文件
+  * 示例：`lsof -u user`
+  * `-u`：指定具体用户打开的所有文件
+
 ***
 
 **2. 文件搜索命令**
@@ -126,6 +130,16 @@
   * `-c`：指定发送次数
 * `ifconfig`：查看和设置网卡信息
   * 示例：`ifconfig [网卡名称] [IP地址]`
+
+* `whois`：查看域名信息
+  * 示例：`whois domain`
+
+* `dig`：展示域名的DNS信息
+ * 示例：`dig domain`
+
+* `host`：DNS查询
+  * 示例：`host domain`
+
 * `mail`：查看发送电子邮件
   * 示例：`mail [用户]`
 
@@ -160,7 +174,51 @@
 
 ***
 
-**6. 其它**
+**6. 进程相关**
+
+* `strace`：打印一个正在运行的程序和它的子进程调用的每个系统调用的轨迹
+
+* `ps`：列出当前系统中的进程（包括僵死进程）
+
+* `top`：打印出关于当前进程资源使用的信息
+
+* `htop`：`top`替代品，交互式
+
+* `pmap`：显示进程的内存映射
+
+* `/proc`：一个虚拟文件系统，以ASCII文本格式输出大量内核数据结构内容
+  * 示例：`cat /proc/loadavg`
+
+***
+
+**7. 硬件信息**
+
+* `dmesg`：显示内核环缓冲区信息
+
+* `cat /proc/cpuinfo`：显示CPU信息
+
+* `cat /proc/meminfo`：显示内存信息
+
+* `free`：显示空闲可用内存
+  * `-h`：显示信息更符合人类阅读；`-m`：MB；`-g`：GB
+
+* `df`：报告文件系统磁盘空间使用情况
+
+* `lspci -tv`：显示PCI设备
+
+* `lsusb -tv`：显示USB设备
+
+* `dmidecode`：显示来自BIOS的DMI/SMBIOS硬件信息
+
+* `hdparm -i /dev/sda`：显示sda磁盘信息
+
+* `hdparm -tT /dev/sda`：测试磁盘sda的读取速度
+
+* `badbloacks -s /dev/sda`：测试磁盘sda上的不可读块
+
+***
+
+**8. 其它**
 
 * `shutdown`：关机重启
   * 示例：`shutdown [选项] 时间`，`shutdown -h now`
