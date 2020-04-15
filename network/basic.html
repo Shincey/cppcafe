@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第二节 · CPP Cafe</title>
+        <title>基础知识 · CPP Cafe</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../os/" />
+    <link rel="next" href="arp.html" />
     
     
-    <link rel="prev" href="one.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -229,12 +229,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="one.html">
+        <li class="chapter active" data-level="1.3.1" data-path="basic.html">
             
-                <a href="one.html">
+                <a href="basic.html">
             
                     
-                    第一节
+                    基础知识
             
                 </a>
             
@@ -242,12 +242,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="two.html">
+        <li class="chapter " data-level="1.3.2" data-path="arp.html">
             
-                <a href="two.html">
+                <a href="arp.html">
             
                     
-                    第二节
+                    ARP协议
             
                 </a>
             
@@ -503,7 +503,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >第二节</a>
+        <a href=".." >基础知识</a>
     </h1>
 </div>
 
@@ -518,7 +518,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7B2C;&#x4E8C;&#x8282;">&#x7B2C;&#x4E8C;&#x8282;</h1>
+                                <h1 id="&#x57FA;&#x7840;&#x77E5;&#x8BC6;">&#x57FA;&#x7840;&#x77E5;&#x8BC6;</h1>
+<p><strong>&#x7F51;&#x7EDC;&#x5206;&#x5C42;</strong></p>
+<p>OSI&#x5206;&#x5C42;&#xFF1A;</p>
+<p>TCP/IP&#x534F;&#x8BAE;&#x65CF;&#x5206;&#x4E3A;&#x56DB;&#x5C42;&#xFF1A;</p>
+<p><img src="https://i.loli.net/2020/04/15/HSM4Z7k3YTdQKcJ.png" alt="11586939176_.pic.jpg"></p>
+<ul>
+<li><p>TCP&#x4F20;&#x7ED9;IP&#x7684;&#x6570;&#x636E;&#x5355;&#x5143;&#x79F0;&#x4F5C;<strong>TCP&#x62A5;&#x6587;&#x6BB5;&#xFF08;TCP segment&#xFF09;&#x3002;</strong></p>
+</li>
+<li><p>UDP&#x4F20;&#x7ED9;IP&#x7684;&#x4FE1;&#x606F;&#x5355;&#x5143;&#x79F0;&#x4E3A;<strong>UDP&#x6570;&#x636E;&#x62A5;&#xFF08;UDP datagram&#xFF09;&#x3002;</strong></p>
+</li>
+<li><p>IP&#x548C;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x5C42;&#x4E4B;&#x95F4;&#x4F20;&#x9001;&#x7684;&#x6570;&#x636E;&#x5355;&#x5143;&#x5E94;&#x8BE5;&#x662F;&#x5206;&#x7EC4;&#xFF08;packet&#xFF09;&#xFF0C;<strong>&#x5206;&#x7EC4;&#x65E2;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;IP&#x6570;&#x636E;&#x62A5;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;IP&#x6570;&#x636E;&#x62A5;&#x7684;&#x4E00;&#x4E2A;&#x7247;&#xFF08;fragment&#xFF09;&#x3002;</strong></p>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x4EE5;&#x592A;&#x7F51;&#x4F20;&#x8F93;&#x7684;&#x6BD4;&#x7279;&#x6D41;&#x79F0;&#x4F5C;<strong>&#x5E27;&#xFF08;Frame&#xFF09;&#x3002;</strong></p>
+</li>
+</ul>
+<p>&#x4E3A;&#x4E86;&#x63D0;&#x4F9B;&#x53EF;&#x9760;&#x7684;&#x670D;&#x52A1;&#xFF0C;TCP&#x91C7;&#x7528;&#x4E86;&#x8D85;&#x65F6;&#x91CD;&#x53D1;&#x3001;&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x7AEF;&#x5230;&#x7AEF;&#x7684;&#x786E;&#x8BA4;&#x5206;&#x7EC4;&#x7B49;&#x673A;&#x5236;&#x3002;</p>
+<p>&#x7F51;&#x6865;&#x662F;&#x5728;&#x94FE;&#x8DEF;&#x5C42;&#x4E0A;&#x5BF9;&#x7F51;&#x7EDC;&#x8FDB;&#x884C;&#x4E92;&#x8FDE;&#xFF0C;&#x8DEF;&#x7531;&#x5668;&#x662F;&#x5728;&#x7F51;&#x7EDC;&#x5C42;&#x4E0A;&#x5BF9;&#x7F51;&#x7EDC;&#x8FDB;&#x884C;&#x4E92;&#x8FDE;&#x3002;&#x7F51;&#x6865;&#x4F7F;&#x5F97;&#x591A;&#x4E2A;&#x5C40;&#x57DF;&#x7F51;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x5BF9;&#x4E0A;&#x5C42;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5C40;&#x57DF;&#x7F51;&#x3002;</p>
+<hr>
+<p><strong>&#x4E92;&#x8054;&#x7F51;&#x5730;&#x5740;</strong></p>
+<p>&#x4EE5;IPv4&#x4E3A;&#x4F8B;&#xFF0C;IP&#x5730;&#x5740;&#x957F;&#x4E3A;32bit&#x3002;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x4E94;&#x7C7B;&#xFF1A;</p>
+<p><img src="https://i.loli.net/2020/04/15/QDYxqGZaRrTp1ys.png" alt="21586941011_.pic.jpg"></p>
+<p>&#x8FD9;&#x4E9B;&#x5730;&#x5740;&#x901A;&#x5E38;&#x4EE5; <strong>&#x70B9;&#x5206;&#x5341;&#x8FDB;&#x5236;</strong> &#x8868;&#x793A;&#xFF0C;&#x5176;&#x8303;&#x56F4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8303;&#x56F4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><strong>0</strong>.0.0.0~<strong>127</strong>.255.255.255</td>
+</tr>
+<tr>
+<td>B</td>
+<td><strong>128</strong>.0.0.0~<strong>191</strong>.255.255.255</td>
+</tr>
+<tr>
+<td>C</td>
+<td><strong>192</strong>.0.0.0~<strong>223</strong>.255.255.255</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>224</strong>.0.0.0~<strong>239</strong>.255.255.255</td>
+</tr>
+<tr>
+<td>E</td>
+<td><strong>240</strong>.0.0.0~<strong>247</strong>.0.0.0</td>
+</tr>
+</tbody>
+</table>
+<p>&#x591A;&#x63A5;&#x53E3;&#x4E3B;&#x673A;&#x5177;&#x6709;&#x591A;&#x4E2A;IP&#x5730;&#x5740;&#xFF0C;&#x6BCF;&#x4E2A;&#x63A5;&#x53E3;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;IP&#x5730;&#x5740;&#x3002;InterNIC&#x5206;&#x4E3A;&#x7F51;&#x7EDC;&#x53F7;&#xFF0C;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x5458;&#x5206;&#x914D;&#x4E3B;&#x673A;&#x53F7;&#x3002;</p>
+<p>IP&#x5730;&#x5740;&#x53C8;&#x53EF;&#x5206;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li>&#x5355;&#x64AD;&#x5730;&#x5740;&#xFF1A;&#x76EE;&#x7684;&#x4E3A;&#x5355;&#x4E2A;&#x4E3B;&#x673A;</li>
+<li>&#x5E7F;&#x64AD;&#x5730;&#x5740;&#xFF1A;&#x76EE;&#x7684;&#x7AEF;&#x4E3A;&#x7ED9;&#x5B9A;&#x7F51;&#x7EDC;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x4E3B;&#x673A;</li>
+<li>&#x591A;&#x64AD;&#x5730;&#x5740;&#xFF1A;&#x76EE;&#x7684;&#x7AEF;&#x4E3A;&#x540C;&#x4E00;&#x7EC4;&#x5185;&#x7684;&#x6240;&#x6709;&#x4E3B;&#x673A;</li>
+</ul>
+<p>TCP/UDP&#x91C7;&#x7528;16bit&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x6765;&#x8BC6;&#x522B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;&#x670D;&#x52A1;&#x5668;&#x4E00;&#x822C;&#x901A;&#x8FC7;&#x77E5;&#x540D;&#x7AEF;&#x53E3;&#x53F7;&#x8BC6;&#x522B;&#xFF0C;&#x5982;FTP:21&#x3001;SSH:22&#x3001;SMTP:25&#x3001;HTTP:80&#x3001;POP3:110&#x3001;HTTPS:443&#x7B49;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x5B83;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x5E76;&#x4E0D;&#x5173;&#x5FC3;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x662F;&#x672C;&#x673A;&#x4E0A;&#x552F;&#x4E00;&#x7684;&#x5373;&#x53EF;&#x3002;</p>
 
                                 
                                 </section>
@@ -546,12 +605,12 @@
 
             
                 
-                <a href="one.html" class="navigation navigation-prev " aria-label="Previous page: 第一节">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 计算机网络">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../os/" class="navigation navigation-next " aria-label="Next page: 操作系统">
+                <a href="arp.html" class="navigation navigation-next " aria-label="Next page: ARP协议">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -562,7 +621,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二节","level":"1.3.2","depth":2,"next":{"title":"操作系统","level":"1.4","depth":1,"path":"os/README.md","ref":"os/README.md","articles":[{"title":"第一节","level":"1.4.1","depth":2,"path":"os/one.md","ref":"os/one.md","articles":[]},{"title":"第二节","level":"1.4.2","depth":2,"path":"os/two.md","ref":"os/two.md","articles":[]}]},"previous":{"title":"第一节","level":"1.3.1","depth":2,"path":"network/one.md","ref":"network/one.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","pageview-count","code","back-to-top-button","-sharing","sharing-plus","hide-element","insert-logo"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":true,"all":["douban","qq","qzone","facebook","google","instapaper","twitter","weibo","messenger","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"https://i.loli.net/2019/12/06/4IiyV7hZSXRfTlg.png"}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"}},"gitbook":"*","description":null,"extension":null},"file":{"path":"network/two.md","mtime":"2019-12-23T13:48:50.044Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-30T05:03:10.785Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基础知识","level":"1.3.1","depth":2,"next":{"title":"ARP协议","level":"1.3.2","depth":2,"path":"network/arp.md","ref":"network/arp.md","articles":[]},"previous":{"title":"计算机网络","level":"1.3","depth":1,"path":"network/README.md","ref":"network/README.md","articles":[{"title":"基础知识","level":"1.3.1","depth":2,"path":"network/basic.md","ref":"network/basic.md","articles":[]},{"title":"ARP协议","level":"1.3.2","depth":2,"path":"network/arp.md","ref":"network/arp.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","pageview-count","code","back-to-top-button","-sharing","sharing-plus","hide-element","insert-logo","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":true,"all":["douban","qq","qzone","facebook","google","instapaper","twitter","weibo","messenger","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"https://i.loli.net/2019/12/06/4IiyV7hZSXRfTlg.png"}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"}},"gitbook":"*","description":null,"extension":null},"file":{"path":"network/basic.md","mtime":"2020-04-15T16:55:40.679Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-15T16:56:41.040Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -597,6 +656,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
