@@ -11,6 +11,7 @@
     * [基础知识](network/basic.md)
     * [IP协议](network/ip.md)
     * [ARP协议](network/arp.md)
+    * [ICMP协议](network/icmp.md)
 * [操作系统](os/README.md)
     * [第一节](os/one.md)
     * [第二节](os/two.md)
