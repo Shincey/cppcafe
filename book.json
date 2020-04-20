@@ -10,7 +10,7 @@
     "extension": null,
 
     "plugins": ["chapter-fold", "pageview-count", "code", "back-to-top-button",
-                "-sharing", "sharing-plus", "hide-element", "insert-logo"],
+                "-sharing", "sharing-plus", "hide-element", "insert-logo", "katex"],
 
     "pluginsConfig": {
         "fontSettings": {
