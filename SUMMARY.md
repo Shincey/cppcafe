@@ -37,6 +37,7 @@
     * [find](shell/find.md)
     * [输入输出](shell/io.md)
     * [命令执行顺序](shell/order.md)
+    * [grep](shell/grep.md)
 * [其它](others/README.md)
     * [Linux常用命令](others/linux_commands.md)
     * [Makefile使用(1)-基本规则](others/makefile_1.md)
