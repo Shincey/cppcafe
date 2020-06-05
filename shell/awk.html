@@ -1,0 +1,1333 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>awk命令 · CPP Cafe</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Shincey Tao <shinceytao@gmail.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../others/" />
+    
+    
+    <link rel="prev" href="grep.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/Shincey" target="_blank" class="custom-link">Shincey's Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../cpp/">
+            
+                <a href="../cpp/">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../cpp/stl_for_leetcode.html">
+            
+                <a href="../cpp/stl_for_leetcode.html">
+            
+                    
+                    刷题该了解的STL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../cpp/multiple_returns.html">
+            
+                <a href="../cpp/multiple_returns.html">
+            
+                    
+                    C++实现函数多返回值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../cpp/split_of_cpp.html">
+            
+                <a href="../cpp/split_of_cpp.html">
+            
+                    
+                    C++实现split函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../cpp/rvalue_reference.html">
+            
+                <a href="../cpp/rvalue_reference.html">
+            
+                    
+                    左右值及引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../cpp/int_overflow.html">
+            
+                <a href="../cpp/int_overflow.html">
+            
+                    
+                    整数运算溢出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../cpp/const.html">
+            
+                <a href="../cpp/const.html">
+            
+                    
+                    const
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../cpp/default_and_delete.html">
+            
+                <a href="../cpp/default_and_delete.html">
+            
+                    
+                    default & delete
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../cpp/auto_and_decltype.html">
+            
+                <a href="../cpp/auto_and_decltype.html">
+            
+                    
+                    auto & decltype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../cpp/funcptr.html">
+            
+                <a href="../cpp/funcptr.html">
+            
+                    
+                    函数指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../cpp/deduction01.html">
+            
+                <a href="../cpp/deduction01.html">
+            
+                    
+                    类型推导1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../cpp/question.html">
+            
+                <a href="../cpp/question.html">
+            
+                    
+                    问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../network/">
+            
+                <a href="../network/">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../network/basic.html">
+            
+                <a href="../network/basic.html">
+            
+                    
+                    基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../network/ip.html">
+            
+                <a href="../network/ip.html">
+            
+                    
+                    IP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../network/arp.html">
+            
+                <a href="../network/arp.html">
+            
+                    
+                    ARP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../network/icmp.html">
+            
+                <a href="../network/icmp.html">
+            
+                    
+                    ICMP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../network/udp.html">
+            
+                <a href="../network/udp.html">
+            
+                    
+                    UDP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../network/tcp01.html">
+            
+                <a href="../network/tcp01.html">
+            
+                    
+                    TCP协议1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../network/tcp02.html">
+            
+                <a href="../network/tcp02.html">
+            
+                    
+                    TCP协议2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../network/tcp03.html">
+            
+                <a href="../network/tcp03.html">
+            
+                    
+                    TCP协议3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../network/multicast.html">
+            
+                <a href="../network/multicast.html">
+            
+                    
+                    广播和多播
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../network/igmp.html">
+            
+                <a href="../network/igmp.html">
+            
+                    
+                    IGMP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../os/">
+            
+                <a href="../os/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../os/one.html">
+            
+                <a href="../os/one.html">
+            
+                    
+                    第一节
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../os/two.html">
+            
+                <a href="../os/two.html">
+            
+                    
+                    第二节
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../db/">
+            
+                <a href="../db/">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../db/one.html">
+            
+                <a href="../db/one.html">
+            
+                    
+                    第一节
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../linux/">
+            
+                <a href="../linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../linux/commands.html">
+            
+                <a href="../linux/commands.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../linux/socket.html">
+            
+                <a href="../linux/socket.html">
+            
+                    
+                    Socket API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="file_permission.html">
+            
+                <a href="file_permission.html">
+            
+                    
+                    文件权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="meta.html">
+            
+                <a href="meta.html">
+            
+                    
+                    元符号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="find.html">
+            
+                <a href="find.html">
+            
+                    
+                    find
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="io.html">
+            
+                <a href="io.html">
+            
+                    
+                    输入输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="order.html">
+            
+                <a href="order.html">
+            
+                    
+                    命令执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="regex.html">
+            
+                <a href="regex.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="grep.html">
+            
+                <a href="grep.html">
+            
+                    
+                    grep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.8" data-path="awk.html">
+            
+                <a href="awk.html">
+            
+                    
+                    awk命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../others/">
+            
+                <a href="../others/">
+            
+                    
+                    其它
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../others/linux_commands.html">
+            
+                <a href="../others/linux_commands.html">
+            
+                    
+                    Linux常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../others/makefile_1.html">
+            
+                <a href="../others/makefile_1.html">
+            
+                    
+                    Makefile使用(1)-基本规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../others/makefile_2.html">
+            
+                <a href="../others/makefile_2.html">
+            
+                    
+                    Makefile使用(2)-使用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../others/makefile_3.html">
+            
+                <a href="../others/makefile_3.html">
+            
+                    
+                    Makefile使用(3)-使用变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../others/makefile_4.html">
+            
+                <a href="../others/makefile_4.html">
+            
+                    
+                    Makefile使用(4)-使用函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../others/makefile_5.html">
+            
+                <a href="../others/makefile_5.html">
+            
+                    
+                    Makefile使用(5)-make运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../others/makefile_6.html">
+            
+                <a href="../others/makefile_6.html">
+            
+                    
+                    Makefile使用(6)-隐含规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../others/makefile_7.html">
+            
+                <a href="../others/makefile_7.html">
+            
+                    
+                    Makefile使用(7)-更新函数库文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../end/">
+            
+                <a href="../end/">
+            
+                    
+                    结束
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >awk命令</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="awk&#x547D;&#x4EE4;">awk&#x547D;&#x4EE4;</h1>
+<p>&#x5982;&#x679C;&#x8981;&#x683C;&#x5F0F;&#x5316;&#x4E00;&#x4E2A;&#x62A5;&#x6587;&#x6216;&#x4ECE;&#x4E00;&#x4E2A;&#x5927;&#x7684;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x4E2D;&#x62BD;&#x53D6;&#x6570;&#x636E;&#x5305;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>awk</code>&#x547D;&#x4EE4;&#x3002;&#x5B83;&#x5728;&#x6587;&#x672C;&#x6D4F;&#x89C8;&#x548C;&#x6570;&#x636E;&#x7684;&#x719F;&#x7EC3;&#x4F7F;&#x7528;&#x4E0A;&#x6027;&#x80FD;&#x4F18;&#x5F02;&#x3002;</p>
+<h3 id="1-&#x8C03;&#x7528;awk">1. &#x8C03;&#x7528;awk</h3>
+<p>&#x6709;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x8C03;&#x7528;<code>awk</code>&#xFF0C;&#x7B2C;&#x4E00;&#x79CD;&#x662F;&#x547D;&#x4EE4;&#x884C;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk [-F field-separator] &apos;commands&apos; input-file(s)
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#xFF0C;<code>commands</code>&#x662F;&#x771F;&#x6B63;&#x7684;<code>awk</code>&#x547D;&#x4EE4;&#x3002;<code>[-F &#x57DF;&#x5206;&#x9694;&#x7B26;]</code>&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;<code>awk</code>&#x4F7F;&#x7528;&#x7A7A;&#x683C;&#x4F5C;&#x4E3A;&#x7F3A;&#x7701;&#x7684;&#x57DF;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x8981;&#x6D4F;&#x89C8;&#x57DF;&#x95F4;&#x6709;&#x7A7A;&#x683C;&#x7684;&#x6587;&#x672C;&#xFF0C;&#x4E0D;&#x5FC5;&#x6307;&#x5B9A;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x6D4F;&#x89C8;&#x5982;password&#x6587;&#x4EF6;&#xFF0C;&#x6B64;&#x6587;&#x4EF6;&#x5404;&#x57DF;&#x4EE5;&#x5192;&#x53F7;&#x4F5C;&#x4E3A;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x660E;&#x786E;&#x6307;&#x660E;&#xFF0C;<code>awk -F: &apos;commands&apos; input-file</code>&#x3002;</p>
+<p>&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x5C06;&#x6240;&#x6709;&#x7684;<code>awk</code>&#x547D;&#x4EE4;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4F7F;<code>awk</code>&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x7528;<code>awk</code>&#x547D;&#x4EE4;&#x89E3;&#x91CA;&#x5668;&#x4F5C;&#x4E3A;&#x811A;&#x672C;&#x7684;&#x9996;&#x884C;&#xFF0C;&#x4EE5;&#x4FBF;&#x901A;&#x8FC7;&#x952E;&#x5165;&#x811A;&#x672C;&#x540D;&#x79F0;&#x6765;&#x8C03;&#x7528;&#x5B83;&#x3002;</p>
+<p>&#x7B2C;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x5C06;&#x6240;&#x6709;&#x7684;<code>awk</code>&#x547D;&#x4EE4;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;&#xFF1A;<code>awk -f awk-script-file input-file(s)</code>&#x3002;<code>-f</code>&#x6307;&#x660E;&#x5728;&#x6587;&#x4EF6;<code>awk-script-file</code>&#x4E2D;&#x7684;<code>awk</code>&#x811A;&#x672C;&#x3002;</p>
+<h3 id="2-awk&#x811A;&#x672C;">2. awk&#x811A;&#x672C;</h3>
+<p>&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;<code>-F</code>&#x9009;&#x9879;&#xFF0C;&#x5219;<code>awk</code>&#x6BCF;&#x6B21;&#x8BFB;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x6216;&#x4E00;&#x884C;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x5206;&#x9694;&#x7B26;&#x5206;&#x9694;&#x6307;&#x5B9A;&#x57DF;&#xFF1B;&#x5982;&#x679C;&#x672A;&#x8BBE;&#x7F6E;<code>-F</code>&#x9009;&#x9879;&#xFF0C;<code>awk</code>&#x5047;&#x5B9A;&#x7A7A;&#x683C;&#x4E3A;&#x57DF;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x5E76;&#x4FDD;&#x6301;&#x8FD9;&#x4E2A;&#x8BBE;&#x7F6E;&#x76F4;&#x5230;&#x53D1;&#x73B0;&#x4E00;&#x65B0;&#x884C;&#x3002;&#x5F53;&#x65B0;&#x884C;&#x51FA;&#x73B0;&#x65F6;&#xFF0C;<code>awk</code>&#x547D;&#x4EE4;&#x77E5;&#x9053;&#x5DF2;&#x7ECF;&#x8BFB;&#x5B8C;&#x6574;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4E0B;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;&#x542F;&#x52A8;&#x8BFB;&#x547D;&#x4EE4;&#xFF0C;&#x8FD9;&#x4E2A;&#x8BFB;&#x8FDB;&#x7A0B;&#x5C06;&#x6301;&#x7EED;&#x5230;&#x6587;&#x4EF6;&#x5C3E;&#x6216;&#x6587;&#x4EF6;&#x4E0D;&#x518D;&#x5B58;&#x5728;&#x3002;</p>
+<h4 id="21-&#x6A21;&#x5F0F;&#x548C;&#x52A8;&#x4F5C;">2.1 &#x6A21;&#x5F0F;&#x548C;&#x52A8;&#x4F5C;</h4>
+<p>&#x4EFB;&#x4F55;<code>awk</code>&#x8BED;&#x53E5;&#x90FD;&#x7531;&#x6A21;&#x5F0F;&#x548C;&#x52A8;&#x4F5C;&#x7EC4;&#x6210;&#x3002;&#x5728;&#x4E00;&#x4E2A;<code>awk</code>&#x811A;&#x672C;&#x4E2D;&#x53EF;&#x80FD;&#x6709;&#x5F88;&#x591A;&#x8BED;&#x53E5;&#x3002;&#x6A21;&#x5F0F;&#x90E8;&#x5206;&#x51B3;&#x5B9A;&#x52A8;&#x4F5C;&#x8BED;&#x53E5;&#x4F55;&#x65F6;&#x89E6;&#x53D1;&#x65F6;&#x95F4;&#x3002;&#x5904;&#x7406;&#x5373;&#x5BF9;&#x6570;&#x636E;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x7701;&#x7565;&#x6A21;&#x5F0F;&#x90E8;&#x5206;&#xFF0C;&#x52A8;&#x4F5C;&#x5C06;&#x65F6;&#x523B;&#x4FDD;&#x6301;&#x6267;&#x884C;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x6761;&#x4EF6;&#x8BED;&#x53E5;&#x6216;&#x590D;&#x5408;&#x8BED;&#x53E5;&#x6216;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x6A21;&#x5F0F;&#x5305;&#x62EC;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;BEGIN&#x548C;END&#x3002;&#x4F7F;&#x7528;BEGIN&#x8BED;&#x53E5;&#x8BBE;&#x7F6E;&#x8BA1;&#x6570;&#x548C;&#x6253;&#x5370;&#x5934;&#xFF0C;BEGIN&#x8BED;&#x53E5;&#x4F7F;&#x7528;&#x5728;&#x4EFB;&#x4F55;&#x6587;&#x672C;&#x6D4F;&#x89C8;&#x52A8;&#x4F5C;&#x4E4B;&#x524D;&#xFF0C;&#x4E4B;&#x540E;&#x6587;&#x672C;&#x6D4F;&#x89C8;&#x52A8;&#x4F5C;&#x4F9D;&#x636E;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x3002;END&#x8BED;&#x53E5;&#x7528;&#x6765;&#x5728;<code>awk</code>&#x5B8C;&#x6210;&#x6587;&#x672C;&#x6D4F;&#x89C8;&#x52A8;&#x4F5C;&#x540E;&#x6253;&#x5370;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x603B;&#x6570;&#x548C;&#x7ED3;&#x5C3E;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x7279;&#x522B;&#x6307;&#x660E;&#x6A21;&#x5F0F;&#xFF0C;<code>awk</code>&#x603B;&#x662F;&#x5339;&#x914D;&#x6216;&#x6253;&#x5370;&#x884C;&#x6570;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x52A8;&#x4F5C;&#x5728;&#x5927;&#x62EC;&#x53F7;<code>{}</code>&#x5185;&#x6307;&#x660E;&#xFF0C;&#x52A8;&#x4F5C;&#x5927;&#x591A;&#x6570;&#x7528;&#x6765;&#x6253;&#x5370;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x6709;&#x66F4;&#x957F;&#x7684;&#x4EE3;&#x7801;&#x8BF8;&#x5982;<code>if</code>&#x548C;&#x5FAA;&#x73AF;&#x8BED;&#x53E5;&#x53CA;&#x5FAA;&#x73AF;&#x9000;&#x51FA;&#x7ED3;&#x6784;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x660E;&#x91C7;&#x53D6;&#x52A8;&#x4F5C;&#xFF0C;<code>awk</code>&#x5C06;&#x6253;&#x5370;&#x51FA;&#x6240;&#x6709;&#x6D4F;&#x89C8;&#x51FA;&#x6765;&#x7684;&#x8BB0;&#x5F55;&#x3002;</p>
+<h4 id="22-&#x57DF;&#x548C;&#x8BB0;&#x5F55;">2.2 &#x57DF;&#x548C;&#x8BB0;&#x5F55;</h4>
+<p><code>awk</code>&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x5176;&#x6D4F;&#x89C8;&#x57DF;&#x6807;&#x8BB0;&#x4E3A;<code>$1, $2, ..., $n</code>&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x79F0;&#x4E3A;&#x57DF;&#x6807;&#x8BC6;&#x3002;&#x4F7F;&#x7528;<code>$1,$3</code>&#x8868;&#x793A;&#x53C2;&#x7167;&#x7B2C;1&#x548C;&#x7B2C;3&#x57DF;&#xFF0C;&#x8FD9;&#x91CC;&#x7528;&#x9017;&#x53F7;&#x4F5C;&#x5206;&#x9694;&#x3002;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x6253;&#x5370;&#x6240;&#x6709;&#x57DF;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;<code>$0</code>&#x3002;<code>awk</code>&#x6D4F;&#x89C8;&#x65F6;&#xFF0C;&#x5230;&#x8FBE;&#x4EE5;&#x65B0;&#x884C;&#xFF0C;&#x5373;&#x5047;&#x5B9A;&#x5230;&#x8FBE;&#x5305;&#x542B;&#x57DF;&#x7684;&#x8BB0;&#x5F55;&#x672B;&#x5C3E;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x65B0;&#x7EAA;&#x5F55;&#x7684;&#x4E0B;&#x4E00;&#x884C;&#x7684;&#x8BFB;&#x52A8;&#x4F5C;&#xFF0C;&#x5E76;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x57DF;&#x5206;&#x9694;&#x3002;&#x4E3A;&#x4E86;&#x6253;&#x5370;&#x4E00;&#x4E2A;&#x57DF;&#x6216;&#x6240;&#x6709;&#x57DF;&#xFF0C;&#x4F7F;&#x7528;<code>print</code>&#x547D;&#x4EE4;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;<code>awk</code>&#x52A8;&#x4F5C;&#xFF08;&#x52A8;&#x4F5C;&#x8BED;&#x6CD5;&#x7528;&#x5706;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#xFF09;&#x3002;</p>
+<p><strong>&#x4FDD;&#x5B58;<code>awk</code>&#x8F93;&#x51FA;</strong>&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x91CD;&#x5B9A;&#x5411;&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;{print $0}&apos; input.txt &gt;output.txt
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x5C06;&#x7ED3;&#x679C;&#x663E;&#x793A;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#xFF0C;&#x5E76;&#x4E14;&#x4F1A;&#x91CD;&#x5199;&#x786C;&#x76D8;&#x4E0A;&#x540C;&#x540D;&#x6587;&#x4EF6;&#x3002;&#x5F53;&#x7136;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>tee</code>&#x547D;&#x4EE4;&#xFF0C;&#x5728;&#x8F93;&#x51FA;&#x5230;&#x5C4F;&#x5E55;&#x540C;&#x65F6;&#x8F93;&#x51FA;&#x5230;&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;{print $0}&apos; input.txt | tee output.txt
+</code></pre>
+<p><strong><code>awk</code>&#x7684;&#x8F93;&#x5165;</strong>&#xFF1A;</p>
+<pre><code class="lang-shell">$ name.awk input.txt
+# &#x91CD;&#x5B9A;&#x5411;&#x65B9;&#x6CD5;
+$ name.awk &lt; input.txt
+# &#x7BA1;&#x9053;&#x65B9;&#x6CD5;
+$ input.txt | name.awk
+</code></pre>
+<p><strong>&#x6253;&#x5370;</strong>&#xFF1A;</p>
+<pre><code class="lang-shell"># &#x5355;&#x72EC;&#x6253;&#x5370;&#x8BB0;&#x5F55;
+$ awk &apos;{print $1,$4}&apos; input.txt
+# &#x6253;&#x5370;&#x62A5;&#x544A;&#x5934;
+$ awk &apos;BEGIN {print &quot;Headname1 Headname2\n----------------&quot;} {print $1&quot;\t&quot;$4}&apos; input.txt
+# &#x6253;&#x5370;&#x4FE1;&#x606F;&#x5C3E;
+$ awk &apos;BEGIN {print &quot;Headname\n--------------&quot;} {print $1} END {&quot;end-of-report&quot;}&apos; ipt.txt
+</code></pre>
+<p><strong>&#x9519;&#x8BEF;&#x4FE1;&#x606F;</strong>&#xFF0C;&#x9047;&#x5230;<code>awk</code>&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x5927;&#x6982;&#x6709;&#x51E0;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x9519;&#x8BEF;&#xFF1A;</p>
+<ul>
+<li>&#x786E;&#x4FDD;&#x6574;&#x4E2A;<code>awk</code>&#x547D;&#x4EE4;&#x7528;&#x5355;&#x5F15;&#x53F7;&#x62EC;&#x8D77;&#x6765;</li>
+<li>&#x786E;&#x4FDD;&#x547D;&#x4EE4;&#x5185;&#x6240;&#x6709;&#x5F15;&#x53F7;&#x6210;&#x5BF9;&#x51FA;&#x73B0;</li>
+<li>&#x786E;&#x4FDD;&#x7528;&#x82B1;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x52A8;&#x4F5C;&#x8BED;&#x53E5;&#xFF0C;&#x7528;&#x5706;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6761;&#x4EF6;&#x8BED;&#x53E5;</li>
+<li>&#x53EF;&#x80FD;&#x5FD8;&#x8BB0;&#x4F7F;&#x7528;&#x82B1;&#x62EC;&#x53F7;&#x7B49;&#x7B49;</li>
+</ul>
+<p><strong>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</strong>&#xFF1A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x9700;&#x8981;&#x7528;&#x659C;&#x7EBF;&#x62EC;&#x8D77;&#x6765;&#xFF0C;&#x6BD4;&#x5982;<code>/Hello/</code>&#x53EF;&#x4EE5;&#x67E5;&#x51FA;&#x5355;&#x8BCD;Hello&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<p><strong>&#x5143;&#x5B57;&#x7B26;</strong>&#xFF1A;<code>\ ^ $ . [] | () * +  ?</code>&#x3002;<code>+</code>&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;<code>?</code>&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x51FA;&#x73B0;&#x9891;&#x7387;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x53EA;&#x9002;&#x7528;&#x4E8E;<code>awk</code>&#x800C;&#x4E0D;&#x9002;&#x7528;&#x4E8E;<code>grep</code>&#x548C;<code>sed</code>&#x3002;</p>
+<p><strong>&#x6761;&#x4EF6;&#x64CD;&#x4F5C;&#x7B26;</strong>&#xFF1A;<code>&lt;&#x3001; &lt;=&#x3001; ==&#x3001; !=&#x3001; &gt;&#x3001; &gt;=&#x3001; ~&#x3001; !~</code>&#x3002;<code>~</code>&#x5339;&#x914D;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;<code>!~</code>&#x4E0D;&#x5339;&#x914D;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<p>&#x4E3A;&#x4F7F;&#x4E00;&#x57DF;&#x53F7;&#x5339;&#x914D;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;<code>~</code>&#x540E;&#x7D27;&#x8DDF;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;if&#x8BED;&#x53E5;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;{if($4~/Hello/) print $0}&apos; ipt.txt #&#x5982;&#x679C;&#x57DF;4&#x5305;&#x542B;Hello&#xFF0C;&#x6253;&#x5370;&#x5339;&#x914D;&#x884C;&#x8BB0;&#x5F55;
+$ awk &apos;$0 ~/Hello/&apos; ipt.txt #&#x5982;&#x679C;&#x8BB0;&#x5F55;&#x5305;&#x542B;&#x6A21;&#x5F0F;Hello&#xFF0C;&#x6253;&#x5370;&#xFF0C;&#x5339;&#x914D;&#x8BB0;&#x5F55;&#x627E;&#x5230;&#x65F6;&#xFF0C;&#x4E0D;&#x7279;&#x522B;&#x58F0;&#x660E;&#x5219;&#x7F3A;&#x7701;&#x6253;&#x5370;&#x6574;&#x6761;
+</code></pre>
+<p>&#x5982;&#x679C;<code>{if($3~/32/) print $0}</code>&#x4F1A;&#x5339;&#x914D;&#x5230;&#x8BF8;&#x5982;3212&#x3001;32&#x3001;3211&#x7B49;&#xFF0C;&#x60F3;&#x7CBE;&#x786E;&#x5339;&#x914D;&#x5230;32&#x5219;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;$3==&quot;48&quot; {print $0}&apos; ipt.txt
+</code></pre>
+<p>&#x4E0D;&#x5339;&#x914D;&#x65F6;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;$0 !~/Hello/&apos; ipt.txt #&#x67E5;&#x627E;&#x4E0D;&#x5305;&#x542B;&#x6A21;&#x5F0F;Hello&#xFF0C;&#x7F3A;&#x7701;&#x60C5;&#x51B5;&#x4E0B;&#x5C06;&#x6253;&#x5370;&#x6240;&#x6709;&#x5339;&#x914D;&#x8BB0;&#x5F55;&#xFF0C;&#x4E0D;&#x5FC5;&#x52A0;&#x52A8;&#x4F5C;&#x90E8;&#x5206;
+</code></pre>
+<p>&#x5176;&#x5B83;&#x5C0F;&#x4E8E;&#x5927;&#x4E8E;&#x7B49;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;{if ($6 &gt; $7) print $1}&apos; ipt.txt
+$ awk &apos;{if ($5 &lt;= $3) print $0}&apos; ipt.txt
+</code></pre>
+<p>&#x903B;&#x8F91;&#x7B26;&#x53F7;<code>&amp;&amp; AND</code>&#x3001;<code>|| OR</code>&#x3001;<code>!</code>&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;{if ($1==&quot;name1&quot; &amp;&amp; $2==&quot;name2&quot;) print $0}&apos; ipt.txt
+</code></pre>
+<h4 id="23-&#x5185;&#x7F6E;&#x53D8;&#x91CF;">2.3 &#x5185;&#x7F6E;&#x53D8;&#x91CF;</h4>
+<p><code>awk</code>&#x6709;&#x8BB8;&#x591A;&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x88AB;&#x6539;&#x53D8;&#x3002;&#x4E0B;&#x8868;&#x7ED9;&#x51FA;&#x4E86;&#x6700;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x4E00;&#x4E9B;&#x53D8;&#x91CF;&#x53CA;&#x542B;&#x4E49;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x547D;&#x4EE4;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ARGC</code></td>
+<td>&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x4E2A;&#x6570;</td>
+</tr>
+<tr>
+<td><code>ARGV</code></td>
+<td>&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x6392;&#x5217;</td>
+</tr>
+<tr>
+<td><code>ENVIRON</code></td>
+<td>&#x652F;&#x6301;&#x961F;&#x5217;&#x4E2D;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td><code>FNR</code></td>
+<td>&#x6D4F;&#x89C8;&#x6587;&#x4EF6;&#x7684;&#x8BB0;&#x5F55;&#x6570;</td>
+</tr>
+<tr>
+<td><code>FS</code></td>
+<td>&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x57DF;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;&#x547D;&#x4EE4;&#x884C;<code>-F</code>&#x9009;&#x9879;&#xFF0C;&#x5982;&#x8BBE;&#x7F6E;<code>,</code>&#xFF0C;<code>FS=&quot;,&quot;</code></td>
+</tr>
+<tr>
+<td><code>NF</code></td>
+<td>&#x6D4F;&#x89C8;&#x8BB0;&#x5F55;&#x7684;&#x57DF;&#x4E2A;&#x6570;</td>
+</tr>
+<tr>
+<td><code>NR</code></td>
+<td>&#x5DF2;&#x8BFB;&#x7684;&#x8BB0;&#x5F55;&#x6570;</td>
+</tr>
+<tr>
+<td><code>OFS</code></td>
+<td>&#x8F93;&#x51FA;&#x57DF;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;&#x7A7A;&#x683C;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;<code>#</code>&#x53EF;&#x4EE5;<code>OFS=&quot;#&quot;</code></td>
+</tr>
+<tr>
+<td><code>ORS</code></td>
+<td>&#x8F93;&#x51FA;&#x8BB0;&#x5F55;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;&#x65B0;&#x884C;<code>\n</code></td>
+</tr>
+<tr>
+<td><code>RS</code></td>
+<td>&#x63A7;&#x5236;&#x8BB0;&#x5F55;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;&#x65B0;&#x884C;<code>\n</code></td>
+</tr>
+<tr>
+<td><code>FILENAME</code></td>
+<td><code>awk</code>&#x6D4F;&#x89C8;&#x7684;&#x6587;&#x4EF6;&#x540D;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5982;&#x4F7F;&#x7528;<code>NR</code>&#x5C06;&#x6253;&#x5370;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x8BB0;&#x5F55;&#x4E2A;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;END {print NR}&apos; ipt.txt #&#x53EF;&#x4EE5;&#x5728;&#x672B;&#x5C3E;&#x8F93;&#x51FA;&#x5DF2;&#x8BFB;&#x7684;&#x8BB0;&#x5F55;&#x6570;
+</code></pre>
+<p>&#x5728;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#xFF0C;&#x4F7F;&#x7528;<code>NF</code>&#x53D8;&#x91CF;&#x663E;&#x793A;&#x6BCF;&#x4E00;&#x6761;&#x8BFB;&#x8BB0;&#x5F55;&#x4E2D;&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x57DF;&#xFF0C;<code>NR</code>&#x663E;&#x793A;&#x5DF2;&#x8BFB;&#x8BB0;&#x5F55;&#x6570;&#xFF0C;&#x5E76;&#x5728;END&#x90E8;&#x5206;&#x6253;&#x5370;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x540D;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;{print NF,NR,$0} END{print FILENAME}&apos; ipt.txt
+</code></pre>
+<p>&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>NF</code>&#x663E;&#x793A;&#x76EE;&#x5F55;&#x6216;&#x8005;&#x6587;&#x4EF6;&#x540D;&#xFF1A;</p>
+<pre><code class="lang-shell">$ echo $PWD | awk -F/ &apos;{print $NF}&apos;
+</code></pre>
+<p>&#x5047;&#x8BBE;<code>$PWD</code>&#x8FD4;&#x56DE;<code>usr/local/etc</code>&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;<code>awk</code>&#x8F93;&#x5165;&#xFF0C;<code>-F/</code>&#x6307;&#x5B9A;&#x57DF;&#x5206;&#x9694;&#x7B26;&#x5206;&#x9694;&#x51FA;3&#x4E2A;&#x57DF;&#xFF0C;&#x5219;<code>NF</code>&#x503C;&#x662F;3&#xFF0C;<code>$3</code>&#x5219;&#x6307;&#x5B9A;&#x7B2C;3&#x4E2A;&#x57DF;&#x5185;&#x5BB9;&#xFF0C;&#x5373;<code>etc</code>&#x3002;</p>
+<pre><code class="lang-shell">$ echo &quot;/usr/local/etc/hello.txt&quot; | awk -F/ &apos;{print $NF}&apos; #&#x8F93;&#x51FA; hello.txt
+</code></pre>
+<h4 id="24-awk&#x64CD;&#x4F5C;&#x7B26;">2.4 awk&#x64CD;&#x4F5C;&#x7B26;</h4>
+<p>&#x5728;<code>awk</code>&#x4E2D;&#x4F7F;&#x7528;&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x57FA;&#x672C;&#x8868;&#x8FBE;&#x5F0F;&#x53EF;&#x4EE5;&#x5212;&#x5206;&#x4E3A;&#x6570;&#x5B57;&#x578B;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x578B;&#x3001;&#x53D8;&#x91CF;&#x578B;&#x3001;&#x57DF;&#x53CA;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x3002;</p>
+<p><strong>&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x57DF;&#x5230;&#x57DF;&#x53D8;&#x91CF;&#x540D;</strong>&#xFF1A;&#x5728;<code>awk</code>&#x4E2D;&#x8BBE;&#x7F6E;&#x6709;&#x610F;&#x4E49;&#x7684;&#x57DF;&#x540D;&#x662F;&#x4E00;&#x79CD;&#x597D;&#x7684;&#x4E60;&#x60EF;&#xFF0C;&#x5728;&#x8FDB;&#x884C;&#x57DF;&#x540D;&#x5339;&#x914D;&#x6216;&#x5173;&#x7CFB;&#x64CD;&#x4F5C;&#x65F6;&#x66F4;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3002;&#x4E00;&#x822C;&#x7684;&#x53D8;&#x91CF;&#x540D;&#x8BBE;&#x7F6E;&#x65B9;&#x5F0F;&#x4F4D;<code>name=$n</code>&#xFF0C;&#x8FD9;&#x91CC;<code>name</code>&#x4E3A;&#x8C03;&#x7528;&#x7684;&#x57DF;&#x53D8;&#x91CF;&#x540D;&#xFF0C;<code>n</code>&#x4E3A;&#x5B9E;&#x9645;&#x57DF;&#x53F7;&#x3002;&#x591A;&#x4E2A;&#x8BBE;&#x7F6E;&#x4E4B;&#x95F4;&#x7528;&#x5206;&#x53F7;&#x9694;&#x5F00;&#x3002;</p>
+<pre><code class="lang-shell">$ awk &apos;{name=$1;age=$4; if(age ~/42/) print name&quot; is age:&quot;age}&apos; ipt.txt
+</code></pre>
+<p><strong>&#x57DF;&#x503C;&#x6BD4;&#x8F83;&#x64CD;&#x4F5C;</strong>&#xFF1A;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x6D4B;&#x8BD5;&#x4E00;&#x6570;&#x503C;&#x57DF;&#x662F;&#x5426;&#x5C0F;&#x4E8E;&#x53E6;&#x4E00;&#x6570;&#x503C;&#x57DF;&#xFF1A;1&#xFF09;&#x5728;BEGIN&#x4E2D;&#x7ED9;&#x53D8;&#x91CF;&#x540D;&#x8D4B;&#x503C;&#x3002;2&#xFF09;&#x5728;&#x5173;&#x7CFB;&#x64CD;&#x4F5C;&#x4E2D;&#x4F7F;&#x7528;&#x5B9E;&#x9645;&#x6570;&#x503C;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x5728;BEGIN&#x90E8;&#x5206;&#x8D4B;&#x503C;&#x662F;&#x5F88;&#x6709;&#x76CA;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;<code>awk</code>&#x8868;&#x8FBE;&#x5F0F;&#x8FDB;&#x884C;&#x6539;&#x52A8;&#x65F6;&#x51CF;&#x5C11;&#x9EBB;&#x70E6;&#x3002;&#x4F7F;&#x7528;&#x5173;&#x7CFB;&#x64CD;&#x4F5C;&#x5FC5;&#x987B;&#x7528;&#x5706;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x3002;</p>
+<pre><code class="lang-shell">$ awk &apos;(if($6 &lt; 27) print $0)&apos; ipt.txt
+$ awk &apos;BEGIN {BASELINE=&quot;27 &quot;}{if($6 &lt; BASELINE) print $0}&apos; ipt.txt #&#x4E24;&#x8005;&#x4F5C;&#x7528;&#x76F8;&#x540C;
+</code></pre>
+<p>&#x5176;&#x4E2D;&#x7528;&#x5F15;&#x53F7;&#x5C06;27&#x62EC;&#x8D77;&#x6765;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x6548;&#x679C;&#x4E00;&#x6837;&#x3002;</p>
+<p><strong>&#x4FEE;&#x6539;&#x6570;&#x503C;&#x57DF;&#x53D6;&#x503C;</strong>&#xFF1A;&#x5728;<code>awk</code>&#x4E2D;&#x4FEE;&#x6539;&#x4EFB;&#x4F55;&#x57DF;&#x65F6;&#xFF0C;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x70B9;&#x8981;&#x8BB0;&#x4F4F;&#x5B9E;&#x9645;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x662F;&#x4E0D;&#x53EF;&#x4FEE;&#x6539;&#x7684;&#xFF0C;&#x4FEE;&#x6539;&#x7684;&#x53EA;&#x662F;&#x4FDD;&#x5B58;&#x5728;&#x7F13;&#x5B58;&#x91CC;&#x7684;<code>awk</code>&#x526F;&#x672C;&#x3002;<code>awk</code>&#x4F1A;&#x5728;&#x53D8;&#x91CF;<code>NR</code>&#x548C;<code>NF</code>&#x4E2D;&#x53CD;&#x6620;&#x51FA;&#x4FEE;&#x6539;&#x75D5;&#x8FF9;&#x3002;</p>
+<p>&#x4E3A;&#x4FEE;&#x6539;&#x6570;&#x503C;&#x57DF;&#xFF0C;&#x7B80;&#x5355;&#x7684;&#x7ED9;&#x57DF;&#x6807;&#x8BC6;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#xFF0C;&#x5982;<code>$1=$1+5</code>&#xFF0C;&#x4F1A;&#x5C06;<code>$1</code>&#x7684;&#x503C;&#x52A0;5&#xFF0C;&#x5F53;&#x7136;&#x5728;&#x5B9E;&#x65BD;&#x4FEE;&#x6539;&#x524D;&#x9996;&#x5148;&#x8981;&#x5339;&#x914D;&#x57DF;&#x540D;&#x3002;</p>
+<pre><code class="lang-shell">$ awk &apos;{if($1==&quot;Hello&quot;) $6=$6-1; print $1,%6}&apos; ipt.txt
+</code></pre>
+<p><strong>&#x4FEE;&#x6539;&#x6587;&#x672C;&#x57DF;</strong>&#xFF1A;&#x4FEE;&#x6539;&#x6587;&#x672C;&#x57DF;&#x5373;&#x5BF9;&#x5176;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#x3002;&#x9700;&#x8981;&#x505A;&#x7684;&#x662F;&#x8D4B;&#x7ED9;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x8BB0;&#x4F4F;&#x5B57;&#x7B26;&#x4E32;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#xFF0C;&#x5E76;&#x7528;&#x5706;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x6574;&#x4E2A;&#x8BED;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-shell">$ awk &apos;{if($1==&quot;hello&quot;) ($1=&quot;world&quot;); print $1}&apos; ipt.txt
+</code></pre>
+<p><strong>&#x53EA;&#x663E;&#x793A;&#x4FEE;&#x6539;&#x8BB0;&#x5F55;</strong>&#xFF1A;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x8BB0;&#x5F55;&#x6570;&#x5F88;&#x591A;&#xFF0C;&#x6253;&#x5370;&#x5168;&#x90E8;&#x53EA;&#x4E3A;&#x4E86;&#x67E5;&#x770B;&#x4FEE;&#x6539;&#x90E8;&#x5206;&#x663E;&#x7136;&#x4E0D;&#x5408;&#x7406;&#x3002;&#x5728;&#x6A21;&#x5F0F;&#x540E;&#x9762;&#x4F7F;&#x7528;&#x82B1;&#x62EC;&#x53F7;&#x5C06;&#x53EA;&#x6253;&#x5370;&#x4FEE;&#x6539;&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;{if($1==&quot;hello&quot;){$1=&quot;world&quot;;print $1}}&apos; ipt.txt
+</code></pre>
+<p><strong>&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x8F93;&#x51FA;&#x57DF;</strong>&#xFF1A;&#x5728;<code>awk</code>&#x4E2D;&#x5904;&#x7406;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x57FA;&#x4E8E;&#x5404;&#x57DF;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x65F6;&#x521B;&#x5EFA;&#x65B0;&#x57DF;&#x662F;&#x4E00;&#x79CD;&#x597D;&#x7684;&#x4E60;&#x60EF;&#x3002;&#x521B;&#x5EFA;&#x65B0;&#x57DF;&#x8981;&#x901A;&#x8FC7;&#x5176;&#x5B83;&#x57DF;&#x8D4B;&#x4E88;&#x65B0;&#x57DF;&#x6807;&#x8BC6;&#x7B26;&#x3002;&#x5982;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x5176;&#x5B83;&#x57DF;&#x7684;&#x52A0;&#x6CD5;&#x65B0;&#x57DF;<code>{$4=$2+$3}</code>&#xFF0C;&#x8FD9;&#x91CC;&#x5047;&#x5B9A;&#x8BB0;&#x5F55;&#x5305;&#x542B;3&#x4E2A;&#x57DF;&#xFF0C;&#x5219;&#x57DF;4&#x4F4D;&#x65B0;&#x5EFA;&#x57DF;&#xFF0C;&#x4FDD;&#x5B58;&#x57DF;2&#x548C;&#x57DF;3&#x76F8;&#x52A0;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code class="lang-shell">$ awk &apos;{if($6&lt;$7) {$8=$7-$6; print $1,$8}}&apos; ipt.txt #$8&#x662F;&#x65B0;&#x57DF;
+</code></pre>
+<p>&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x66F4;&#x5177;&#x6709;&#x610F;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x540D;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;if($6&lt;$7){diff=$7-$6; print $1,diff}&apos; ipt.txt
+</code></pre>
+<p><strong>&#x589E;&#x52A0;&#x5217;&#x503C;</strong>&#xFF1A;&#x4E3A;&#x589E;&#x52A0;&#x5217;&#x6570;&#x6216;&#x8FDB;&#x884C;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x7EDF;&#x8BA1;&#xFF0C;&#x4F7F;&#x7528;&#x7B26;&#x53F7;<code>+=</code>&#x3002;&#x4F8B;&#x5982;&#x5C06;<code>$1</code>&#x52A0;&#x5165;&#x53D8;&#x91CF;<code>total</code>&#xFF1A;<code>total+=$1</code>&#x3002;&#x5217;&#x503C;&#x589E;&#x52A0;&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x8BB8;&#x591A;&#x6587;&#x4EF6;&#x90FD;&#x8981;&#x6C42;&#x7EDF;&#x8BA1;&#x603B;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;(total+=$6); END{print &quot;total: &quot; total}&apos; ipt.txt
+</code></pre>
+<p>&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x6253;&#x5370;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#xFF0C;&#x53EA;&#x6253;&#x5370;&#x7D2F;&#x52A0;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;{(total+$6)}; END{print &quot;total: &quot;total}&apos; ipt.txt
+</code></pre>
+<p><strong>&#x6587;&#x4EF6;&#x957F;&#x5EA6;&#x76F8;&#x52A0;</strong>&#xFF1A;&#x5728;&#x76EE;&#x5F55;&#x4E2D;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x5FEB;&#x901F;&#x67E5;&#x770B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x957F;&#x5EA6;&#x53CA;&#x5176;&#x603B;&#x548C;&#xFF0C;&#x4F46;&#x8981;&#x6392;&#x9664;&#x5B50;&#x76EE;&#x5F55;&#xFF0C;&#x4F7F;&#x7528;<code>ls -l</code>&#x547D;&#x4EE4;&#xFF0C;&#x7136;&#x540E;&#x7BA1;&#x9053;&#x8F93;&#x51FA;&#x5230;<code>awk</code>&#xFF0C;<code>awk</code>&#x9996;&#x5148;&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x5254;&#x9664;&#x9996;&#x5B57;&#x6BCD;<code>d</code>&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6587;&#x4EF6;&#x957F;&#x5EA6;&#x5217;&#x76F8;&#x52A0;&#xFF0C;&#x8F93;&#x51FA;&#x5230;&#x6BCF;&#x4E00;&#x6587;&#x4EF6;&#x957F;&#x5EA6;&#x53CA;&#x5728;END&#x90E8;&#x5206;&#x8F93;&#x51FA;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x957F;&#x5EA6;&#x3002;</p>
+<pre><code class="lang-shell">$ ls -l | awk &apos;/^[^d]/ {print $9&quot;\t&quot;$5} {tol+=$5} END{print &quot;total KB: &quot;tol}&apos;
+</code></pre>
+<h4 id="25-&#x5185;&#x7F6E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x51FD;&#x6570;">2.5 &#x5185;&#x7F6E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x51FD;&#x6570;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x7B26;&#x4E32;&#x51FD;&#x6570;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gsub(r,s)</code></td>
+<td>&#x5728;&#x6574;&#x4E2A;<code>$0</code>&#x4E2D;&#x7528;<code>s</code>&#x66FF;&#x4EE3;<code>r</code></td>
+</tr>
+<tr>
+<td><code>gsub(r,s,t)</code></td>
+<td>&#x5728;&#x6574;&#x4E2A;<code>t</code>&#x4E2D;&#x7528;<code>s</code>&#x66FF;&#x4EE3;<code>r</code></td>
+</tr>
+<tr>
+<td><code>index(s,t)</code></td>
+<td>&#x8FD4;&#x56DE;<code>s</code>&#x4E2D;&#x5B57;&#x7B26;&#x4E32;<code>t</code>&#x7684;&#x7B2C;&#x4E00;&#x4F4D;&#x7F6E;</td>
+</tr>
+<tr>
+<td><code>length(s)</code></td>
+<td>&#x8FD4;&#x56DE;<code>s</code>&#x957F;&#x5EA6;</td>
+</tr>
+<tr>
+<td><code>match(s,r)</code></td>
+<td>&#x6D4B;&#x8BD5;<code>s</code>&#x662F;&#x5426;&#x5305;&#x542B;&#x5339;&#x914D;<code>r</code>&#x7684;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td><code>split(s,a,fs)</code></td>
+<td>&#x5728;<code>fs</code>&#x4E0A;&#x5C06;<code>s</code>&#x5206;&#x6210;&#x5E8F;&#x5217;<code>a</code></td>
+</tr>
+<tr>
+<td><code>sprint(fmt,exp)</code></td>
+<td>&#x8FD4;&#x56DE;&#x7ECF;<code>fmt</code>&#x683C;&#x5F0F;&#x5316;&#x540E;&#x7684;<code>exp</code></td>
+</tr>
+<tr>
+<td><code>sub(r,s)</code></td>
+<td><code>$0</code>&#x4E2D;&#x6700;&#x5DE6;&#x8FB9;&#x6700;&#x957F;&#x7684;&#x5B50;&#x4E32;&#x88AB;&#x66FF;&#x6362;&#x4E3A;<code>s</code></td>
+</tr>
+<tr>
+<td><code>substr(s,p)</code></td>
+<td>&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;<code>s</code>&#x4E2D;&#x4ECE;<code>p</code>&#x5F00;&#x59CB;&#x7684;&#x540E;&#x7F00;&#x90E8;&#x5206;</td>
+</tr>
+<tr>
+<td><code>substr(s,p,n)</code></td>
+<td>&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;<code>s</code>&#x4E2D;&#x4ECE;<code>p</code>&#x5F00;&#x59CB;&#x957F;&#x5EA6;&#x4E3A;<code>n</code>&#x7684;&#x540E;&#x7F00;&#x90E8;&#x5206;</td>
+</tr>
+</tbody>
+</table>
+<p><code>gsub</code>&#x51FD;&#x6570;&#x6709;&#x70B9;&#x7C7B;&#x4F3C;<code>sed</code>&#x7684;&#x67E5;&#x627E;&#x548C;&#x66FF;&#x6362;&#xFF0C;&#x5141;&#x8BB8;&#x66FF;&#x6362;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5B57;&#x7B26;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5B57;&#x7B26;&#xFF0C;&#x5E76;&#x4EE5;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5F62;&#x5F0F;&#x6267;&#x884C;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x57DF;<code>$0</code>&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x51FD;&#x6570;&#x5141;&#x8BB8;&#x6307;&#x5B9A;&#x76EE;&#x6807;&#xFF0C;&#x7136;&#x800C;&#x672A;&#x6307;&#x5B9A;&#x76EE;&#x6807;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;<code>$0</code>&#x3002;</p>
+<p><code>index(s,t)</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x76EE;&#x6807;&#x5B57;&#x7B26;&#x4E32;<code>s</code>&#x4E2D;&#x67E5;&#x627E;&#x5B57;&#x7B26;&#x4E32;<code>t</code>&#x7684;&#x9996;&#x4F4D;&#x7F6E;&#x3002;<code>split</code>&#x4F7F;&#x7528;&#x57DF;&#x5206;&#x9694;&#x7B26;<code>fs</code>&#x5C06;&#x5B57;&#x7B26;&#x4E32;<code>s</code>&#x5212;&#x5206;&#x4E3A;&#x6307;&#x5B9A;&#x5E8F;&#x5217;<code>a</code>&#x3002;<code>sub(r,s)</code>&#x5C06;&#x7528;<code>s</code>&#x66FF;&#x4EE3;<code>$0</code>&#x4E2D;&#x6700;&#x5DE6;&#x8FB9;&#x6700;&#x957F;&#x7684;&#x5B50;&#x4E32;&#xFF0C;&#x8BE5;&#x5B50;&#x4E32;&#x88AB;<code>r</code>&#x5339;&#x914D;&#x3002;</p>
+<pre><code class="lang-shell"># 1.gsub &#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;/&#x76EE;&#x6807;&#x6A21;&#x5F0F;/
+$ awk &apos;gsub(/48311/,48322) {print $0}&apos; ipt.txt
+# 2.index &#x5FC5;&#x987B;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x62EC;&#x8D77;&#x6765;
+$ awk &apos;BEGIN{print index(&quot;Lulu&quot;, &quot;lu&quot;)}&apos; ipt.txt
+# 3.length
+$ awk &apos;$1==&quot;Hello&quot; {print length($1)&quot; &quot;$1}&apos; ipt.txt
+# 4.match &#x6D4B;&#x8BD5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x5305;&#x542B;&#x67E5;&#x627E;&#x5B57;&#x7B26;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x53EF;&#x5BF9;&#x67E5;&#x627E;&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x6B63;&#x5219;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x6210;&#x529F;&#x51FA;&#x73B0;&#x7684;&#x5B57;&#x7B26;&#x6392;&#x5217;&#x6570;
+$ awk &apos;BEGIN {print match(&quot;ANCD&quot;,/d/)}&apos; # &#x65E0;&#xFF0C;&#x8FD4;&#x56DE;0
+# 5.split
+$ awk &apos;BEGIN {print split(&quot;123#456#789&quot;, myarray, &quot;#&quot;)}&apos; #&#x8FD4;&#x56DE;3
+# 6.sub
+$ awk &apos;$1==&quot;Hello&quot; sub(/26/, &quot;29&quot;, $0)&apos; ipt.txt
+# 7.substr
+$ awk &apos;$1==&quot;Hello&quot; {print substr($1,1,5)}&apos; ipt.txt
+</code></pre>
+<h4 id="26-&#x5B57;&#x7B26;&#x4E32;&#x5C4F;&#x853D;&#x5E8F;&#x5217;">2.6 &#x5B57;&#x7B26;&#x4E32;&#x5C4F;&#x853D;&#x5E8F;&#x5217;</h4>
+<p>&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x8005;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x65F6;&#xFF0C;&#x6709;&#x65F6;&#x9700;&#x8981;&#x5728;&#x8F93;&#x51FA;&#x4E2D;&#x52A0;&#x5165;&#x4E00;&#x65B0;&#x884C;&#x6216;&#x67E5;&#x8BE2;&#x4E00;&#x5143;&#x5B57;&#x7B26;&#x3002;</p>
+<p>&#x6253;&#x5370;&#x4E00;&#x65B0;&#x884C;&#x65F6;(<code>\n</code>)&#xFF0C;&#x7ED9;&#x51FA;&#x5176;&#x5C4F;&#x853D;&#x5E8F;&#x5217;&#xFF0C;&#x4EE5;&#x4E0D;&#x5931;&#x5176;&#x7279;&#x6B8A;&#x542B;&#x4E49;&#xFF0C;&#x7528;&#x6CD5;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x524D;&#x52A0;&#x5165;&#x53CD;&#x659C;&#x7EBF;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x67E5;&#x8BE2;&#x82B1;&#x62EC;&#x53F7;<code>{}</code>&#xFF0C;&#x5728;&#x5B57;&#x7B26;&#x524D;&#x52A0;&#x53CD;&#x659C;&#x7EBF;&#xFF0C;&#x5982;<code>/\{/</code>&#xFF0C;&#x5C06;&#x5728;<code>awk</code>&#x4E2D;&#x5931;&#x53BB;&#x5176;&#x7279;&#x6B8A;&#x542B;&#x4E49;&#x3002;</p>
+<pre><code class="lang-shell">$ awk &apos;BEGIN {print &quot;\n\May\tDay\n\nMay    \104\141\171&quot;}&apos;
+</code></pre>
+<p><code>\ddd</code>&#x8868;&#x793A;&#x516B;&#x8FDB;&#x5236;ASCII&#x7801;&#x3002;</p>
+<h4 id="27-awk&#x8F93;&#x51FA;&#x51FD;&#x6570;printf">2.7 awk&#x8F93;&#x51FA;&#x51FD;&#x6570;printf</h4>
+<p><code>awk</code>&#x63D0;&#x4F9B;&#x51FD;&#x6570;<code>printf</code>&#xFF0C;&#x62E5;&#x6709;&#x96C6;&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;&#x529F;&#x80FD;&#x3002;&#x4F8B;&#x5982;&#x6309;&#x5217;&#x8F93;&#x51FA;&#x3001;&#x5DE6;&#x5BF9;&#x9F50;&#x6216;&#x53F3;&#x5BF9;&#x9F50;&#x7B49;&#x3002;</p>
+<p>&#x6BCF;&#x4E00;&#x79CD;<code>printf</code>&#x51FD;&#x6570;&#xFF08;&#x683C;&#x5F0F;&#x63A7;&#x5236;&#x5B57;&#x7B26;&#xFF09;&#x90FD;&#x4EE5;&#x4E00;&#x4E2A;<code>%</code>&#x7B26;&#x53F7;&#x5F00;&#x59CB;&#xFF0C;&#x4EE5;&#x4E00;&#x4E2A;&#x51B3;&#x5B9A;&#x8F6C;&#x6362;&#x7684;&#x5B57;&#x7B26;&#x7ED3;&#x675F;&#x3002;&#x8F6C;&#x6362;&#x5305;&#x542B;&#x4E09;&#x79CD;&#x4FEE;&#x9970;&#x7B26;&#x3002;</p>
+<p><code>printf</code>&#x4FEE;&#x9970;&#x7B26;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4FEE;&#x9970;&#x7B26;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-</code></td>
+<td>&#x5DE6;&#x5BF9;&#x9F50;</td>
+</tr>
+<tr>
+<td><code>Width</code></td>
+<td>&#x57DF;&#x7684;&#x6B65;&#x957F;&#xFF0C;&#x7528;0&#x8868;&#x793A;0&#x6B65;&#x957F;</td>
+</tr>
+<tr>
+<td><code>.prec</code></td>
+<td>&#x6700;&#x5927;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#xFF0C;&#x6216;&#x5C0F;&#x6570;&#x70B9;&#x53F3;&#x8FB9;&#x7684;&#x4F4D;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<p><code>printf</code>&#x683C;&#x5F0F;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x683C;&#x5F0F;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%c</code></td>
+<td>ASCII&#x5B57;&#x7B26;</td>
+</tr>
+<tr>
+<td><code>%d</code></td>
+<td>&#x6574;&#x6570;</td>
+</tr>
+<tr>
+<td><code>%e</code></td>
+<td>&#x6D6E;&#x70B9;&#x6570;&#xFF0C;&#x79D1;&#x5B66;&#x8BA1;&#x6570;&#x6CD5;</td>
+</tr>
+<tr>
+<td><code>%f</code></td>
+<td>&#x6D6E;&#x70B9;&#x6570;</td>
+</tr>
+<tr>
+<td><code>%g</code></td>
+<td><code>awk</code>&#x51B3;&#x5B9A;&#x4F7F;&#x7528;<code>e</code>&#x6216;<code>f</code></td>
+</tr>
+<tr>
+<td><code>%o</code></td>
+<td>&#x516B;&#x8FDB;&#x5236;&#x6570;</td>
+</tr>
+<tr>
+<td><code>%s</code></td>
+<td>&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td><code>%x</code></td>
+<td>&#x5341;&#x516D;&#x8FDB;&#x5236;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-shell">$ echo &quot;65&quot; | awk &apos;{printf &quot;%c\n&quot;, $0}&apos; # &#x8F93;&#x51FA; A
+$ awk &apos;BEGIN{printf &quot;%c\n&quot;, 65}&apos; # &#x8F93;&#x51FA; A
+$ awk &apos;{printf &quot;%-15s %s\n&quot;, $1, $3}&apos; ipt.txt # -&#x8868;&#x793A;&#x5DE6;&#x5BF9;&#x9F50; 15&#x8868;&#x793A;&#x5B57;&#x7B26;&#x957F;&#x5EA6;
+</code></pre>
+<p>&#x5411;&#x4E00;&#x884C;<code>awk</code>&#x547D;&#x4EE4;&#x4F20;&#x503C;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x8BBE;&#x7F6E;&#x53D8;&#x91CF;AGE&#x7B49;&#x4E8E;10&#xFF0C;&#x7136;&#x540E;&#x4F20;&#x5165;<code>awk</code>&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk &apos;{if($5 &lt; AGE) print $0}&apos; AGE=10 ipt.txt
+</code></pre>
+<h4 id="28-&#x811A;&#x672C;&#x6587;&#x4EF6;">2.8 &#x811A;&#x672C;&#x6587;&#x4EF6;</h4>
+<p>&#x53EF;&#x4EE5;&#x5C06;<code>awk</code>&#x811A;&#x672C;&#x5199;&#x5165;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x518D;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#xFF0C;&#x4E0D;&#x5FC5;&#x6BCF;&#x6B21;&#x4F7F;&#x7528;&#x90FD;&#x91CD;&#x65B0;&#x8F93;&#x5165;&#x3002;</p>
+<p>&#x5982;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>student.awk</code>&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-shell">!/bin/awk -f
+# comment line
+# to call: student.awk ipt.txt
+
+#print header first
+BEGIN{
+print &quot;Student    Date    Member    Grade        Age        points&quot;
+print &quot;Name            Joined&quot;
+print &quot;====================================&quot;
+}
+# add the points
+(tol+=$6)
+# print the total and average point
+END{
+print &quot;Club student total points: &quot; tol
+print &quot;Average points: &quot; tol/NR
+}
+</code></pre>
+<p>&#x7B2C;&#x4E00;&#x884C;<code>!/bin/awk -f</code>&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x6CA1;&#x6709;&#x5B83;&#x811A;&#x672C;&#x5C06;&#x4E0D;&#x80FD;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x5728;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x4E2D;&#x8BBE;&#x7F6E;<code>FS</code>&#x5206;&#x9694;&#x7B26;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5728;<code>BEGIN</code>&#x90E8;&#x5206;&#xFF0C;&#x4E0D;&#x7136;<code>awk</code>&#x5C06;&#x4F1A;&#x53D1;&#x751F;&#x6DF7;&#x6DC6;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x57DF;&#x5206;&#x9694;&#x7B26;&#x662F;&#x4EC0;&#x4E48;&#x3002;</p>
+<p>&#x5728;&#x811A;&#x672C;&#x4F20;&#x503C;&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<pre><code class="lang-shell">$ awk script_file var=value input_file
+</code></pre>
+<h4 id="29-awk&#x6570;&#x7EC4;">2.9 awk&#x6570;&#x7EC4;</h4>
+<p>&#x524D;&#x9762;&#x8BF4;&#x5230;<code>split</code>&#x8FD4;&#x56DE;&#x6570;&#x7EC4;<code>myarray</code>&#x4E0B;&#x6807;&#x6570;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;<code>myarra</code>&#x4E3A;&#xFF1A;<code>myarray[1]&#x3001;myarray[2]&#x3001;myarray[3]</code>&#x3002;</p>
+<p>&#x6570;&#x7EC4;&#x4F7F;&#x7528;&#x524D;&#x4E0D;&#x5FC5;&#x5B9A;&#x4E49;&#xFF0C;&#x4E5F;&#x4E0D;&#x5FC5;&#x6307;&#x5B9A;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#xFF0C;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x5FAA;&#x73AF;&#x6765;&#x8BBF;&#x95EE;&#x6570;&#x7EC4;&#xFF1A;</p>
+<pre><code class="lang-shell">for (element in array) print array[element]
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="grep.html" class="navigation navigation-prev " aria-label="Previous page: grep">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../others/" class="navigation navigation-next " aria-label="Next page: 其它">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"awk命令","level":"1.7.8","depth":2,"next":{"title":"其它","level":"1.8","depth":1,"path":"others/README.md","ref":"others/README.md","articles":[{"title":"Linux常用命令","level":"1.8.1","depth":2,"path":"others/linux_commands.md","ref":"others/linux_commands.md","articles":[]},{"title":"Makefile使用(1)-基本规则","level":"1.8.2","depth":2,"path":"others/makefile_1.md","ref":"others/makefile_1.md","articles":[]},{"title":"Makefile使用(2)-使用命令","level":"1.8.3","depth":2,"path":"others/makefile_2.md","ref":"others/makefile_2.md","articles":[]},{"title":"Makefile使用(3)-使用变量","level":"1.8.4","depth":2,"path":"others/makefile_3.md","ref":"others/makefile_3.md","articles":[]},{"title":"Makefile使用(4)-使用函数","level":"1.8.5","depth":2,"path":"others/makefile_4.md","ref":"others/makefile_4.md","articles":[]},{"title":"Makefile使用(5)-make运行","level":"1.8.6","depth":2,"path":"others/makefile_5.md","ref":"others/makefile_5.md","articles":[]},{"title":"Makefile使用(6)-隐含规则","level":"1.8.7","depth":2,"path":"others/makefile_6.md","ref":"others/makefile_6.md","articles":[]},{"title":"Makefile使用(7)-更新函数库文件","level":"1.8.8","depth":2,"path":"others/makefile_7.md","ref":"others/makefile_7.md","articles":[]}]},"previous":{"title":"grep","level":"1.7.7","depth":2,"path":"shell/grep.md","ref":"shell/grep.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","pageview-count","code","back-to-top-button","-sharing","sharing-plus","hide-element","insert-logo","katex","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":true,"all":["douban","qq","qzone","facebook","google","instapaper","twitter","weibo","messenger","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"https://i.loli.net/2019/12/06/4IiyV7hZSXRfTlg.png"}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"}},"gitbook":"*","description":null,"extension":null},"file":{"path":"shell/awk.md","mtime":"2020-06-05T16:56:52.467Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-05T16:57:32.575Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

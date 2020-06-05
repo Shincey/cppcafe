@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第一节 · CPP Cafe</title>
+        <title>正则表达式 · CPP Cafe</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../linux/" />
+    <link rel="next" href="grep.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="order.html" />
     
 
     </head>
@@ -491,9 +491,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../db/">
             
-                <a href="./">
+                <a href="../db/">
             
                     
                     数据库
@@ -505,9 +505,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.1" data-path="one.html">
+        <li class="chapter " data-level="1.5.1" data-path="../db/one.html">
             
-                <a href="one.html">
+                <a href="../db/one.html">
             
                     
                     第一节
@@ -568,9 +568,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../shell/">
+        <li class="chapter " data-level="1.7" data-path="./">
             
-                <a href="../shell/">
+                <a href="./">
             
                     
                     Shell
@@ -582,9 +582,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../shell/file_permission.html">
+        <li class="chapter " data-level="1.7.1" data-path="file_permission.html">
             
-                <a href="../shell/file_permission.html">
+                <a href="file_permission.html">
             
                     
                     文件权限
@@ -595,9 +595,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="../shell/meta.html">
+        <li class="chapter " data-level="1.7.2" data-path="meta.html">
             
-                <a href="../shell/meta.html">
+                <a href="meta.html">
             
                     
                     元符号
@@ -608,9 +608,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.3" data-path="../shell/find.html">
+        <li class="chapter " data-level="1.7.3" data-path="find.html">
             
-                <a href="../shell/find.html">
+                <a href="find.html">
             
                     
                     find
@@ -621,9 +621,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.4" data-path="../shell/io.html">
+        <li class="chapter " data-level="1.7.4" data-path="io.html">
             
-                <a href="../shell/io.html">
+                <a href="io.html">
             
                     
                     输入输出
@@ -634,9 +634,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.5" data-path="../shell/order.html">
+        <li class="chapter " data-level="1.7.5" data-path="order.html">
             
-                <a href="../shell/order.html">
+                <a href="order.html">
             
                     
                     命令执行顺序
@@ -647,9 +647,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.6" data-path="../shell/regex.html">
+        <li class="chapter active" data-level="1.7.6" data-path="regex.html">
             
-                <a href="../shell/regex.html">
+                <a href="regex.html">
             
                     
                     正则表达式
@@ -660,9 +660,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.7" data-path="../shell/grep.html">
+        <li class="chapter " data-level="1.7.7" data-path="grep.html">
             
-                <a href="../shell/grep.html">
+                <a href="grep.html">
             
                     
                     grep
@@ -673,9 +673,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.8" data-path="../shell/awk.html">
+        <li class="chapter " data-level="1.7.8" data-path="awk.html">
             
-                <a href="../shell/awk.html">
+                <a href="awk.html">
             
                     
                     awk命令
@@ -857,7 +857,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >第一节</a>
+        <a href=".." >正则表达式</a>
     </h1>
 </div>
 
@@ -872,7 +872,62 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7B2C;&#x4E00;&#x8282;">&#x7B2C;&#x4E00;&#x8282;</h1>
+                                <h1 id="&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;">&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</h1>
+<p>&#x57FA;&#x672C;&#x5143;&#x5B57;&#x7B26;&#x96C6;&#x53CA;&#x5176;&#x542B;&#x4E49;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5143;&#x5B57;&#x7B26;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^</code></td>
+<td>&#x53EA;&#x5339;&#x914D;&#x884C;&#x9996;</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>&#x53EA;&#x5339;&#x914D;&#x884C;&#x5C3E;</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>&#x4E00;&#x4E2A;&#x5355;&#x5B57;&#x7B26;&#x540E;&#x7D27;&#x7740;<code>*</code>&#xFF0C;&#x5339;&#x914D;0&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6B64;&#x5355;&#x5B57;&#x7B26;</td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td>&#x5339;&#x914D;<code>[]</code>&#x5185;&#x5B57;&#x7B26;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x5B57;&#x7B26;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x7B26;&#x5E8F;&#x5217;&#xFF0C;<code>[^]</code>&#x5339;&#x914D;&#x975E;&#x8303;&#x56F4;&#x5185;&#x7684;&#x5B57;&#x7B26;&#x5E8F;&#x5217;</td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>&#x8F6C;&#x4E49;&#xFF0C;&#x5C4F;&#x853D;&#x4E00;&#x4E9B;&#x5143;&#x5B57;&#x7B26;&#x7684;&#x7279;&#x6B8A;&#x542B;&#x4E49;</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>&#x5339;&#x914D;&#x4EFB;&#x610F;&#x5355;&#x5B57;&#x7B26;</td>
+</tr>
+<tr>
+<td><code>pattern\{n\}</code></td>
+<td>&#x7528;&#x6765;&#x5339;&#x914D;&#x524D;&#x9762;pattern&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#xFF0C;n&#x4E3A;&#x6B21;&#x6570;</td>
+</tr>
+<tr>
+<td><code>pattern\{n,\}</code></td>
+<td>&#x542B;&#x4E49;&#x540C;&#x4E0A;&#xFF0C;&#x4F46;&#x6B21;&#x6570;&#x6700;&#x5C11;&#x4E3A;n&#x6B21;</td>
+</tr>
+<tr>
+<td><code>pattern\{n,m\}</code></td>
+<td>&#x542B;&#x4E49;&#x540C;&#x4E0A;&#xFF0C;&#x6B21;&#x6570;&#x5728;n&#x5230;m&#x4E4B;&#x95F4;&#xFF0C;n&#x3001;m&#x4E3A;0~255&#x4E2D;&#x4EFB;&#x610F;&#x6574;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>^$</code>&#x6765;&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x7A7A;&#x884C;&#xFF0C;&#x56E0;&#x4E3A;&#x5373;&#x5339;&#x914D;&#x884C;&#x9996;&#x53C8;&#x5339;&#x914D;&#x884C;&#x5C3E;&#xFF0C;&#x4E2D;&#x95F4;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x6A21;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x4E3A;&#x7A7A;&#x884C;&#x3002;</p>
+<p><code>^.*$</code>&#x53EF;&#x4EE5;&#x5339;&#x914D;&#x4EFB;&#x610F;&#x884C;&#xFF0C;&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x5E76;&#x591A;&#x6B21;&#xFF0C;&#x5E76;&#x5339;&#x914D;&#x884C;&#x9996;&#x884C;&#x5C3E;&#xFF0C;&#x56E0;&#x6B64;&#x4E3A;&#x4EFB;&#x610F;&#x884C;&#x3002;</p>
+<p><code>$ . &apos; &quot; * [ ] ^ | () \ + ?</code> &#x8FD9;&#x4E9B;&#x53EF;&#x4EE5;&#x88AB;&#x8BA4;&#x4E3A;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#xFF0C;&#x8981;&#x5339;&#x914D;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x8F6C;&#x4E49;&#x3002;</p>
+<h4 id="&#x4F7F;&#x7528;&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x7ED3;&#x679C;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;">&#x4F7F;&#x7528;<code>\{\}</code>&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x7ED3;&#x679C;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;</h4>
+<p><code>*</code>&#x53EF;&#x4EE5;&#x5339;&#x914D;&#x7ED3;&#x679C;&#x4EFB;&#x610F;&#x6B21;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x8981;&#x6307;&#x5B9A;&#x6B21;&#x6570;&#xFF0C;&#x5C31;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;<code>\{\}</code>&#x3002;&#x5982;&#xFF1A;</p>
+<p><code>A\{2\}B</code> - &#x5339;&#x914D;&#x503C;&#x4E3A;&#xFF1A;AAB&#xFF0C;&#x5176;&#x5339;&#x914D;A&#x4E24;&#x6B21;&#x5E76;&#x4EE5;B&#x7ED3;&#x5C3E;&#x3002;</p>
+<p><code>A\{4,\}B</code> - &#x81F3;&#x5C11;&#x5339;&#x914D;A 4&#x6B21;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;AAAAB&#x3001;AAAAAB&#x7B49;&#x7B49;&#x3002;</p>
+<p><code>A\{2,3\}B</code> - &#x53EF;&#x4EE5;&#x5339;&#x914D;&#x5230;AAB&#x3001;AAAB&#x3002;</p>
 
                                 
                                 </section>
@@ -900,12 +955,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 数据库">
+                <a href="order.html" class="navigation navigation-prev " aria-label="Previous page: 命令执行顺序">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../linux/" class="navigation navigation-next " aria-label="Next page: Linux">
+                <a href="grep.html" class="navigation navigation-next " aria-label="Next page: grep">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -916,7 +971,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第一节","level":"1.5.1","depth":2,"next":{"title":"Linux","level":"1.6","depth":1,"path":"linux/README.md","ref":"linux/README.md","articles":[{"title":"Linux常用命令","level":"1.6.1","depth":2,"path":"linux/commands.md","ref":"linux/commands.md","articles":[]},{"title":"Socket API","level":"1.6.2","depth":2,"path":"linux/socket.md","ref":"linux/socket.md","articles":[]}]},"previous":{"title":"数据库","level":"1.5","depth":1,"path":"db/README.md","ref":"db/README.md","articles":[{"title":"第一节","level":"1.5.1","depth":2,"path":"db/one.md","ref":"db/one.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","pageview-count","code","back-to-top-button","-sharing","sharing-plus","hide-element","insert-logo","katex","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":true,"all":["douban","qq","qzone","facebook","google","instapaper","twitter","weibo","messenger","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"https://i.loli.net/2019/12/06/4IiyV7hZSXRfTlg.png"}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"}},"gitbook":"*","description":null,"extension":null},"file":{"path":"db/one.md","mtime":"2020-04-15T16:39:21.146Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-05T16:57:32.575Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"正则表达式","level":"1.7.6","depth":2,"next":{"title":"grep","level":"1.7.7","depth":2,"path":"shell/grep.md","ref":"shell/grep.md","articles":[]},"previous":{"title":"命令执行顺序","level":"1.7.5","depth":2,"path":"shell/order.md","ref":"shell/order.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","pageview-count","code","back-to-top-button","-sharing","sharing-plus","hide-element","insert-logo","katex","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":true,"all":["douban","qq","qzone","facebook","google","instapaper","twitter","weibo","messenger","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"https://i.loli.net/2019/12/06/4IiyV7hZSXRfTlg.png"}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"}},"gitbook":"*","description":null,"extension":null},"file":{"path":"shell/regex.md","mtime":"2020-06-05T16:56:23.024Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-05T16:57:32.575Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
