@@ -32,6 +32,7 @@
 * [Linux](linux/README.md)
     * [Linux常用命令](linux/commands.md)
     * [Socket API](linux/socket.md)
+    * [信号](linux/signal.md)
 * [Shell](shell/README.md)
     * [文件权限](shell/file_permission.md)
     * [元符号](shell/meta.md)
