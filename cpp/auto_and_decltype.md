@@ -1,5 +1,7 @@
 # auto & decltype
 
+> 简要介绍下 auto 和 decltype 的使用，后面有几节内容专门说明c++中类型推导，全面了解请看后面的类型推导几节。
+
 ## auto
 
 `auto`会忽略掉顶层`const`，保留底层`const`
