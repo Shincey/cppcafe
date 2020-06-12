@@ -12,6 +12,8 @@
     * [auto & decltype](cpp/auto_and_decltype.md)
     * [函数指针](cpp/funcptr.md)
     * [类型推导1](cpp/deduction01.md)
+    * [类型推导2](cpp/deduction02.md)
+    * [类型推导3](cpp/deduction03.md)
     * [问题](cpp/question.md)
 * [计算机网络](network/README.md)
     * [基础知识](network/basic.md)
