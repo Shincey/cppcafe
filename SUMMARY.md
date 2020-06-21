@@ -45,6 +45,7 @@
     * [正则表达式](shell/regex.md)
     * [grep](shell/grep.md)
     * [awk命令](shell/awk.md)
+    * [sed命令](shell/sed.md)
 * [其它](others/README.md)
     * [Linux常用命令](others/linux_commands.md)
     * [Makefile使用(1)-基本规则](others/makefile_1.md)
