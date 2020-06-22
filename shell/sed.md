@@ -36,9 +36,9 @@ $ sed脚本文件 [选项] 输入文件
 
 `sed`选项如下：
 
-* `n` - 不打印，`sed`不写编辑行到标准输出，缺省为打印所有行（编辑和未编辑）。`p`命令可以用来打印编辑行。
-* `c` - 下一命令是编辑命令，使用多项编辑时加入此选项。如果只用到一条`sed`命令，此选项无用，但指定它也没有关系。
-* `f` - 如果正在调用`sed`脚本文件，使用此选项。此选项通知`sed`一个脚本文件支持所有`sed`命令，如：`sed -f myscript.sed inputFile`，这里`myscript.sed`即为支持`sed`命令的文件。
+* `-n` : `sed`不写编辑行到标准输出，缺省为打印所有行（编辑和未编辑）。`p`命令可以用来打印编辑行。
+* `-c` : 下一命令是编辑命令，使用多项编辑时加入此选项。如果只用到一条`sed`命令，此选项无用，但指定它也没有关系。
+* `-f` : 如果正在调用`sed`脚本文件，使用此选项。此选项通知`sed`一个脚本文件支持所有`sed`命令，如：`sed -f myscript.sed inputFile`，这里`myscript.sed`即为支持`sed`命令的文件。
 
 #### 2.1. 保存sed输入
 
@@ -67,7 +67,7 @@ $ sed 'some-sed-commands' input-file > myoutfile
 | `x,/pattern/`       | 通过行号和模式查询匹配行，`3,/vdu/`          |
 | `x,y!`              | 查询不包含指定行号`x`和`y`的行，如`1,2!`     |
 
-##### 2.3 基本sed编辑命令
+#### 2.3 基本sed编辑命令
 
 下表给出了`sed`的编辑命令
 
@@ -101,3 +101,166 @@ $ sed 'some-sed-commands' input-file > myoutfile
 ### 4. 基本sed编程举例
 
 #### 4.1 使用p显示行
+
+打印第二行：
+
+```shell
+$ sed -n '2p' input.txt
+```
+
+#### 4.2 打印范围
+
+打印第1行到第3行：
+
+```shell
+$ sed -n '1,3p' input.txt
+```
+
+#### 4.3 打印模式
+
+打印匹配模式`pattern`的行：
+
+```shell
+$ sed -n '/pattern/'p ipt.txt #测试了一下p写在引号里也可以
+```
+
+#### 4.4 使用模式和行号进行查询
+
+如果要匹配某个单词，可能会返回很多行，使用行号和模式结合，进行精确匹配：
+
+```shell
+$ sed -n 'n,/pattern/'p input.txt
+```
+
+`n,`表示匹配第n行符合模式的行。
+
+#### 4.5 匹配元字符
+
+匹配元字符`$`必须使用反斜线`\`进行转义，模式为`'/\$/'p`：
+
+```shell
+$ sed -n '/\$/'p input.txt
+```
+
+#### 4.6 显示整个文件
+
+只需将行范围设置为`1,$`，`$`意为最后一行：
+
+```shell
+$ sed -n '1,$p' input.txt
+```
+
+#### 4.7 任意字符
+
+`.`匹配任意字符，`*`表示0次或多次重复，并以`ing`结尾：
+
+```shell
+$ sed -n '/.*ing/'p input.txt
+```
+
+#### 4.8 打印行号
+
+```shell 
+$ sed -e '=' input.txt #显示所有的行号和内容
+$ sed -n '=' input.txt #显示所有的行号
+$ sed -n '/pattern/=' input.txt #显示匹配行的行号
+$ sed -n -e '/patter/p' -e '/pattern/=' input.tst #显示匹配行内容及行号
+```
+
+#### 4.9 附加文本
+
+使用`a\`附加文本，可以将制定文本一行或多行附加到指定行。如果不指定文本放置位置，`sed`缺省放在每一行后面。附加文本不能指定范围，只允许一个地址模式。
+
+文本附加操作时，结果输出到标准输出上。它不能被编辑，因为`sed`执行时，首先将文件的一行文本拷贝至缓冲区，在这里`sed`编辑命令执行所有操作（不在初始文件上），文本直接输出到标准输出。
+
+如果想在附加操作后编辑文件，必须保存文件，然后运行另一个`sed`命令编辑它。
+
+```shell
+[address]a\
+text\
+text\
+...
+text
+```
+
+地址指定一个模式或行号，定位新文本附加位置。`a\`通知`sed`对`a\`后的文本进行实际附加操作。每一行有一个斜线表示换行。最后一行不加斜线，`sed`假定这是附加命令结尾。
+
+#### 4.10 创建sed脚本
+
+创建脚本文件`append.sed`，输入下列内容：
+
+```shell
+#!/bin/sed -f
+/pattern/ a\
+this is the content to be appended.
+```
+
+保存，添加执行权限：`$ chmod u+x append.sed`，然后运行：`$ ./append.sed input.txt`。
+
+其将在`/pattern/`匹配的行后面附加内容然后输出到标准输出，并不会改变源文件。
+
+#### 4.11 插入文本
+
+指定一个匹配模式或行号，加`i\`，然后附加内容，和上面类似。
+
+```
+#!/bin/sed -f
+4 i\
+this is the content to be inserted.
+```
+
+在第4行前插入文本。
+
+#### 4.12 修改文本
+
+用新文本在匹配行替代，和上面类似，可以指定行号，也可以是模式。
+
+```shell
+#!/bin/sed -f
+/pattern/ c\
+this is the content
+```
+
+#### 4.13 删除文本
+
+```shell
+$ sed '1d' input.txt #删除第一行
+```
+
+#### 4.16 替换文本
+
+```shell
+$ sed [address[,address] s/pattern-to-match/replace-pattern/[g p w n]
+```
+
+`s`选项通知`sed`这是一个替换操作，并查询`pattern-to-match`，成功后用`replace-pattern`替换它。
+
+替换选项如下：
+
+* `g`：缺省情况下只替换第一次出现模式，使用`g`选项替换全局所有出现模式。
+* `p`：缺省情况下`sed`将所有被替换行写入标准输出，加`p`选项将使`-n`选项无效。`-n`选项不打印输出结果。
+* `w`：文件名，使用此选项将输出定向到一个文件。
+
+```shell
+$ sed 's/night/NIGHT' input.txt #替换night为NIGHT
+$ sed 's/\$//' input.txt #替换$符号为空，即删除，因为replace-pattern没有指定任何内容
+$ sed 's/night/NIGHT/g' input.txt #全局替换
+$ sed 's/night/NIGHT/w out.txt' input.txt #将替换结果写入一个文件
+```
+
+
+
+### 5.  使用替换修改字符串
+
+### 6. 将sed结果写入文件命令
+
+### 7. 从文本中读文本
+
+### 8. 匹配后推出
+
+### 9. 显示文件中的控制字符
+
+### 10. 使用系统sed
+
+###  11. 快速一行命令
+
