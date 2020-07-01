@@ -57,3 +57,20 @@
    * 释放内存方式不一样`delete`、`free`
    * `malloc`只是开辟一块内存，并不做任何初始化，`new`会调用相应的构造函数完成初始化
 
+8. **static_cast、dynamic_cast、const_cast、reinterpret_cast、bad_cast**
+
+   * `static_cast`：用于非多态类型的转换、不执行运行时类型检查、通常用于数值类型转换、在类结构层次中，子类转父类（向上）安全，父类转子类不安全（子类可能存在不在父类的字段或方法）
+   * `dynamic_cast`：用于多态类型转换、执行运行时类型检查、只适用于指针或引用、对不明确的指针将转换失败（返回`nullptr`），但不引发异常、可以在整个类结构层次移动指针，包括向上和向下
+   * `const_cast`：用于删除`const`、`volatile`、`__unaligned`特性（如将`const int`转化为`int`）
+   * `reinterpret_cast`：用于位的简单重新解释、滥用`reinterpret_cast`可能很容易带来风险，除非所需转化本身是低级别的，否则应使用其他强制转化运算符、允许将任何指针转化为任何其他指针类型、也允许将任何整数类型转换为任何指针类型以及反向转换、不能丢掉`const`、`volatile`、`__unaligned`特性、一个实际用途是在哈希函数中，通过让两个不同的值几乎不宜相同的索引结尾的方式将值映射到索引
+   * `bad_cast`：由于强制转化为应用类型失败，`dynamic_cast`运算符引发`bad_cast`异常：
+      ```c++
+      try {
+         A& ref = dynamic_cast<A&>(var);
+      }
+      catch (bad_cast e) {
+         cout << b.what() << endl;
+      }
+      ```
+
+   
