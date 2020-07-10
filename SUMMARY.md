@@ -54,6 +54,7 @@
     * [awk命令](shell/awk.md)
     * [sed命令](shell/sed.md)
 * [其它](others/README.md)
+    * [Git 常见命令速查](others/git_sheet.md)
     * [Linux常用命令](others/linux_commands.md)
     * [Makefile使用(1)-基本规则](others/makefile_1.md)
     * [Makefile使用(2)-使用命令](others/makefile_2.md)
