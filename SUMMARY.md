@@ -39,6 +39,7 @@
 * [数据库](db/README.md)
     * [Group By 和 聚合函数](db/group_by_and_aggregate_functions.md)
     * [Order By / Group By](db/order_group_by.md)
+    * [Where / Having](db/where_and_having.md)
 * [Linux](linux/README.md)
     * [Linux常用命令](linux/commands.md)
     * [Socket API](linux/socket.md)
