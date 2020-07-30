@@ -1075,11 +1075,53 @@
                                 
                                 <h1 id="&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0E;&#x7B97;&#x6CD5;">&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0E;&#x7B97;&#x6CD5;</h1>
 <ol>
-<li><strong>&#x4E8C;&#x53C9;&#x6811;</strong></li>
-<li><strong>B+&#x6811;</strong></li>
-<li><strong>&#x7EA2;&#x9ED1;&#x6811;</strong></li>
-<li><strong>&#x54C8;&#x5E0C;&#x8868;</strong></li>
-<li><strong>&#x5806;</strong></li>
+<li><p><strong>&#x5FEB;&#x6392;</strong></p>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">qsort</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;<span class="hljs-built_in">array</span>, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span> </span>{
+    <span class="hljs-keyword">if</span> (left &gt;= right) <span class="hljs-keyword">return</span>;
+    <span class="hljs-keyword">int</span> low = left, high = right, target = <span class="hljs-built_in">array</span>[left];
+    <span class="hljs-keyword">while</span> (low &lt; high) {
+        <span class="hljs-keyword">while</span> (low &lt; high &amp;&amp; <span class="hljs-built_in">array</span>[high] &gt;= target) high--;
+        <span class="hljs-keyword">if</span> (low &lt; high) <span class="hljs-built_in">array</span>[low++] = <span class="hljs-built_in">array</span>[high];
+        <span class="hljs-keyword">while</span> (low &lt; high &amp;&amp; <span class="hljs-built_in">array</span>[low] &lt;= target) low++;
+        <span class="hljs-keyword">if</span> (low &lt; high) <span class="hljs-built_in">array</span>[high--] = <span class="hljs-built_in">array</span>[low];
+    }
+    <span class="hljs-built_in">array</span>[low] = target;
+    qsort(<span class="hljs-built_in">array</span>, left, low<span class="hljs-number">-1</span>);
+    qsort(<span class="hljs-built_in">array</span>, low+<span class="hljs-number">1</span>, right);
+}
+</code></pre>
+</li>
+<li><p><strong>&#x5806;&#x6392;</strong></p>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">adjust</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;arr, <span class="hljs-keyword">int</span> len, <span class="hljs-keyword">int</span> index)</span> </span>{
+    <span class="hljs-keyword">int</span> left = index * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">int</span> right = index * <span class="hljs-number">2</span> + <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">int</span> idx = index;
+    <span class="hljs-keyword">if</span> (left &lt; len &amp;&amp; arr[left] &lt; arr[idx]) { idx = left; }
+    <span class="hljs-keyword">if</span> (right &lt; len &amp;&amp; arr[right] &lt; arr[idx]) { idx = right; }
+    <span class="hljs-keyword">if</span> (idx == index) <span class="hljs-keyword">return</span>;
+    swap(arr[idx], arr[index]);
+    adjust(arr, len, idx);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">heap_sort</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;arr, <span class="hljs-keyword">int</span> size)</span> </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) { adjust(arr, size, i); }
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">1</span>; i--) {
+        swap(arr[<span class="hljs-number">0</span>], arr[i]);
+        adjust(arr, i, <span class="hljs-number">0</span>);
+    }
+}
+</code></pre>
+</li>
+<li><p><strong>&#x4E8C;&#x53C9;&#x6811;</strong></p>
+</li>
+<li><p><strong>B+&#x6811;</strong></p>
+</li>
+<li><p><strong>&#x7EA2;&#x9ED1;&#x6811;</strong></p>
+</li>
+<li><p><strong>&#x54C8;&#x5E0C;&#x8868;</strong></p>
+</li>
+<li><p><strong>&#x5806;</strong></p>
+</li>
 </ol>
 
                                 
@@ -1124,7 +1166,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据结构与算法","level":"1.2.2","depth":2,"next":{"title":"操作系统","level":"1.2.3","depth":2,"path":"offer/os00.md","ref":"offer/os00.md","articles":[]},"previous":{"title":"C++","level":"1.2.1","depth":2,"path":"offer/cpp00.md","ref":"offer/cpp00.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","pageview-count","code","back-to-top-button","-sharing","sharing-plus","hide-element","insert-logo","katex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":true,"all":["douban","qq","qzone","facebook","google","instapaper","twitter","weibo","messenger","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"https://i.loli.net/2019/12/06/4IiyV7hZSXRfTlg.png"}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"}},"gitbook":"*","description":null,"extension":null},"file":{"path":"offer/algorithm00.md","mtime":"2020-07-10T17:09:40.850Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-26T17:27:19.730Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据结构与算法","level":"1.2.2","depth":2,"next":{"title":"操作系统","level":"1.2.3","depth":2,"path":"offer/os00.md","ref":"offer/os00.md","articles":[]},"previous":{"title":"C++","level":"1.2.1","depth":2,"path":"offer/cpp00.md","ref":"offer/cpp00.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","pageview-count","code","back-to-top-button","-sharing","sharing-plus","hide-element","insert-logo","katex","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"pageview-count":{},"sharing":{"qq":true,"all":["douban","qq","qzone","facebook","google","instapaper","twitter","weibo","messenger","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"https://i.loli.net/2019/12/06/4IiyV7hZSXRfTlg.png"}},"theme":"default","author":"Shincey Tao <shinceytao@gmail.com>","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"CPP Cafe","links":{"sidebar":{"Shincey's Github":"https://github.com/Shincey"}},"gitbook":"*","description":null,"extension":null},"file":{"path":"offer/algorithm00.md","mtime":"2020-07-28T07:28:36.804Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-30T14:29:40.986Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1159,6 +1201,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
