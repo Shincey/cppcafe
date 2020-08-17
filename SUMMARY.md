@@ -7,6 +7,7 @@
     * [操作系统](offer/os00.md)
     * [计算机网络](offer/net00.md)
     * [数据库](offer/sql00.md)
+    * [redis](offer/redis.md)
     * [其它](offer/other00.md)
 * [C++](cpp/README.md)
     * [刷题该了解的STL](cpp/stl_for_leetcode.md)
