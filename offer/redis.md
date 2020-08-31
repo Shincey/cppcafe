@@ -1,5 +1,8 @@
 # redis
 
+推荐阅读[《redis源码日志》](http://daoluan.net/redis-source-notes)
+
+
 1. **什么是redis?**
 
     Redis是一个基于内存的高性能key-value数据库
@@ -87,4 +90,20 @@
 
     redis利用队列技术键并发访问变为串行访问，消除了传统数据库串行控制带来的开销
 
+7. **redis和memcached区别？**
+
+    * redis支持更丰富的数据类型：redis不仅支持简单的k/v类型的数据，同时还提供list、set、zset、hash等数据结构。memcached只支持简单的字符串类型。
+
+    * redis支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用，而memcached把所有数据全部存在内存之中。
+
+    * 集群模式：memcached没有原生的集群模式，需要依靠客户端来实现往集群中分片写入数据；但是redis目前是原生支持cluster模式的。
+
+    * memcached是多线程，非阻塞IO复用的网络模型；redis使用单线程的多路IO复用模型。
+
+8. **redis持久化**
+
+    为防止数据丢失，需要将redis中的数据从内存dump到磁盘，这就是持久化。reids提供两种持久化方式：RDB、AOF。redis允许两者结合，也允许两者同时关闭。
     
+    RDB可以定时备份内存中的数据集，服务器启动的时候，可以从RDB文件中恢复数据集。redis支持两种方式进行RDB持久化：1）当前进程 2）后台执行（BGSAVE）。BGSAVE策略是fork出一个子进程，把内存中的数据集整个dump到硬盘上。
+
+    AOF（append only file）可以记录服务器的所有写操作，在服务器重新启动的时候，会把所有的写操作重新执行一遍，从而实现数据备份。当写操作集过大（比原有的数据集还大），redis会重写写操作。AOF持久化是类似于生成一个关于redis写操作的文件，写操作总是以追加的方式追加到文件中。
